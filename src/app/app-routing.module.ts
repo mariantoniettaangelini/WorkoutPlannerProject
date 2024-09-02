@@ -5,13 +5,17 @@ import { RegisterComponent } from './UserComponents/register/register.component'
 import { ProfileComponent } from './UserComponents/profile/profile.component';
 import { WorkoutSessionComponent } from './HomeComponents/workout-session/workout-session.component';
 import { FirstPageComponent } from './HomeComponents/first-page/first-page.component';
+import { HomeComponent } from './HomeComponents/home/home.component';
+import { WorkoutDetailsComponent } from './HomeComponents/workout-details/workout-details.component';
 
 const routes: Routes = [
   { path: '', component: FirstPageComponent },  // Pagina iniziale
   { path: 'login', component: LoginComponent },  // Pagina di login
   { path: 'register', component: RegisterComponent },  // Pagina di registrazione
   { path: 'profile', component: ProfileComponent },
-  { path: 'workouts', component: WorkoutSessionComponent }, // Workouts page  // Pagina del profilo utente
+  { path: 'workouts', component: WorkoutSessionComponent },
+  { path: 'workout/:id', component: WorkoutDetailsComponent },
+  { path: 'home', component: HomeComponent },   // Workouts page  // Pagina del profilo utente
   { path: '**', redirectTo: '', pathMatch: 'full' }  // Fallback alla home page per percorsi sconosciuti
 ];
 

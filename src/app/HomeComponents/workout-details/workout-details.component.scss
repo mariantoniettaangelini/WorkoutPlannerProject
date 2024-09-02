@@ -1,0 +1,79 @@
+body {
+  background-color: #f5f5dc; /* Beige molto chiaro */
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+.programs-container {
+  background-color: #f5f5dc; /* Beige molto chiaro */
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.program-header {
+  flex: 2; /* Lascia più spazio al contenuto degli esercizi */
+  margin-right: 40px;
+}
+
+.program-header h1 {
+  font-family: 'Arial Black', sans-serif;
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.program-description {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.program-content {
+  flex: 3; /* Larghezza maggiore per la lista degli esercizi */
+}
+
+.program-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.exercise-item {
+  display: flex;
+  align-items: center;
+  background-color: #fff; /* Sfondo bianco per il contenuto dell'esercizio */
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.exercise-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex: 1;
+  justify-content: flex-start;
+}
+
+.exercise-number {
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: 2px solid #000;
+}
+
+.exercise-details {
+  text-align: left; /* Allinea il testo a sinistra */
+  flex: 2;
+  font-size: 0.9rem;
+  color: #555;
+  padding-left: 20px;
+}

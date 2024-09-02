@@ -12,6 +12,8 @@ import { HttpErrorResponse } from '@angular/common/http';
 export class ProfileComponent implements OnInit  {
   user:IUser | null = null;
   progress:any[] = [];
+  profileImageUrl: string = '';
+
   ngOnInit(): void {
     this.loadProfile();
     this.loadProgress();
@@ -35,5 +37,13 @@ export class ProfileComponent implements OnInit  {
       next:(progress)=> this.progress = this.progress,
       error:(error)=> console.error('errore', error)
     });
+  }
+
+  setProfileImg(): void {
+    if (this.user?.gender?.toLowerCase() === 'male') {
+      this.profileImageUrl = '/assets/img/profile-male.jpg';
+    } else if (this.user?.gender?.toLowerCase() === 'female') {
+      this.profileImageUrl = '/assets/img/profile-female.jpg';
+    }
   }
 }

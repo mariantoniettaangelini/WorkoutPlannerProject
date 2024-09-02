@@ -10,59 +10,72 @@
 </head>
 <body>
 
-    <div class="container hero-section">
-        <div class="row align-items-center">
-            <div class="col-md-6 hero-image text-center">
-                <img src="/WorkoutPlannerProject/src/assets/img/immagine1.jpg" alt="Workout Image">
+    <div class="container-fluid hero-section">
+        <div class="row">
+            <div class="col-md-6 hero-image profile-image">
+                <img src="./assets/img/immagine2.jpg" alt="Workout Img">
             </div>
             <div class="col-md-6 hero-text">
-                <h2>Registrazione</h2>
                 <form (submit)="register()">
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Nome</label>
-                        <input type="text" [(ngModel)]="userData.name" name="name" class="form-control" required>
-                    </div>
-                    <div class="mb-3">
+                    <div class="row">
+                      <div class="col-md-6 mb-3">
                         <label for="email" class="form-label">Email</label>
                         <input type="email" [(ngModel)]="userData.email" name="email" class="form-control" required>
-                    </div>
-                    <div class="mb-3">
+                      </div>
+                      <div class="col-md-6 mb-3">
                         <label for="password" class="form-label">Password</label>
                         <input type="password" [(ngModel)]="userData.password" name="password" class="form-control" required>
                     </div>
-                    <div class="mb-3">
-                        <label for="gender" class="form-label">Genere</label>
-                        <input type="text" [(ngModel)]="userData.gender" name="gender" class="form-control">
                     </div>
-                    <div class="mb-3">
-                        <label for="height" class="form-label">Altezza</label>
-                        <input type="number" [(ngModel)]="userData.height" name="height" class="form-control">
+                    <div class="row">
+                      <div class="col-md-6 mb-3">
+                        <label for="name" class="form-label">Nome</label>
+                        <input type="text" [(ngModel)]="userData.name" name="name" class="form-control" required>
                     </div>
-                    <div class="mb-3">
-                        <label for="weight" class="form-label">Peso</label>
-                        <input type="number" [(ngModel)]="userData.weight" name="weight" class="form-control">
+                        <div class="col-md-6 mb-3">
+                            <label for="gender" class="form-label">Genere</label>
+                            <select [(ngModel)]="userData.gender" name="gender" class="form-control">
+                                <option value="" disabled selected>Seleziona</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="mb-3">
-                        <label for="experienceLevel" class="form-label">Livello di esperienza</label>
-                        <select [(ngModel)]="userData.experienceLevel" name="experienceLevel" class="form-control">
-                            <option value="" disabled selected>Seleziona il tuo livello</option>
-                            <option value="Principiante">Principiante</option>
-                            <option value="Intermedio">Intermedio</option>
-                            <option value="Avanzato">Avanzato</option>
-                        </select>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="height" class="form-label">Altezza</label>
+                            <input type="number" [(ngModel)]="userData.height" name="height" class="form-control">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="weight" class="form-label">Peso</label>
+                            <input type="number" [(ngModel)]="userData.weight" name="weight" class="form-control">
+                        </div>
                     </div>
-                    <div class="mb-3">
-                      <label for="goals" class="form-label">Obiettivi</label>
-                      <select [(ngModel)]="userData.goals" name="goals" class="form-control">
-                          <option value="" disabled selected>Seleziona i tuoi obiettivi</option>
-                          <option value="Perdita di peso">Perdita di peso</option>
-                          <option value="Aumento della massa muscolare">Aumento della massa muscolare</option>
-                          <option value="Miglioramento della resistenza">Miglioramento della resistenza</option>
-                          <option value="Flessibilità">Flessibilità</option>
-                          <option value="Benessere generale">Benessere generale</option>
-                      </select>
-                  </div>
-                    <button type="submit" class="btn btn-register">Registrati</button>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="experienceLevel" class="form-label">Livello di esperienza</label>
+                            <select [(ngModel)]="userData.experienceLevel" name="experienceLevel" class="form-control">
+                                <option value="" disabled selected>Seleziona il tuo livello</option>
+                                <option value="Principiante">Principiante</option>
+                                <option value="Intermedio">Intermedio</option>
+                                <option value="Avanzato">Avanzato</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="goals" class="form-label">Obiettivi</label>
+                            <select [(ngModel)]="userData.goals" name="goals" class="form-control">
+                                <option value="" disabled selected>Seleziona i tuoi obiettivi</option>
+                                <option value="Perdita di peso">Perdita di peso</option>
+                                <option value="Aumento della massa muscolare">Aumento della massa muscolare</option>
+                                <option value="Miglioramento della resistenza">Miglioramento della resistenza</option>
+                                <option value="Flessibilità">Flessibilità</option>
+                                <option value="Benessere generale">Benessere generale</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-register">Registrati</button>
+                    </div>
                 </form>
             </div>
         </div>

@@ -1,18 +1,22 @@
-<div *ngIf="user">
-  <h2>{{ user.name }}'s Profile</h2>
-  <p>Email: {{ user.email }}</p>
-  <p>Gender: {{ user.gender }}</p>
-  <p>Height: {{ user.height }}</p>
-  <p>Weight: {{ user.weight }}</p>
-  <p>Experience Level: {{ user.experienceLevel }}</p>
-  <p>Goals: {{ user.goals }}</p>
-</div>
-
-<div *ngIf="progress.length > 0">
-  <h3>Your Workouts</h3>
-  <ul>
-    <li *ngFor="let p of progress">
-      Workout ID: {{ p.workoutSessionId }} - Completed: {{ p.isCompleted ? 'Yes' : 'No' }}
-    </li>
-  </ul>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Bentornato, <span>{{ user?.name }}</span></h2>
+      <div class="profile-image mt-4">
+        <img [src]="profileImageUrl" alt="User Image" class="img-fluid rounded">
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h4>Informazioni Personali</h4>
+      <ul class="personal-info list-unstyled">
+        <li>Email: <strong>{{ user?.email }}</strong></li>
+        <li>Genere: <strong>{{ user?.gender }}</strong></li>
+        <li>Livello di esperienza: <strong>{{ user?.experienceLevel }}</strong></li>
+      </ul>
+      <h4>Storico Workout</h4>
+      <ul class="workout-history list-unstyled">
+        <li *ngFor="let item of progress">{{ item }}</li>
+      </ul>
+    </div>
+  </div>
 </div>

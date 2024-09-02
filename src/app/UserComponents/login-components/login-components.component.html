@@ -13,7 +13,6 @@
     <div class="container hero-section">
         <div class="row align-items-center">
             <div class="col-md-6 hero-text">
-                <h2>Login</h2>
                 <form (submit)="login()">
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
@@ -23,11 +22,13 @@
                         <label for="password" class="form-label">Password</label>
                         <input type="password" [(ngModel)]="loginData.password" name="password" class="form-control" required>
                     </div>
-                    <button type="submit" class="btn btn-login">Login</button>
+                    <div class="d-flex justify-content-center mt-4">
+                        <button type="submit" class="btn btn-login">Accedi</button>
+                    </div>
                 </form>
             </div>
             <div class="col-md-6 hero-image text-center">
-                <img src="assets/your-image.jpg" alt="Workout Image">
+                <img src="./assets/img/immagine1.jpg" alt="Workout Image">
             </div>
         </div>
     </div>

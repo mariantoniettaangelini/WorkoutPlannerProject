@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { UserService } from '../../Services/user-service.service';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-navbar',
@@ -9,26 +10,22 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent {
   isAuthenticated = false;
+  private authSubscription: Subscription;
 
   constructor(private userSvc: UserService, private router: Router) {
-    this.isAuthenticated = this.checkAuth();
-    console.log('Utente autenticato:', this.isAuthenticated);
+    this.authSubscription = this.userSvc.isLoggedIn$.subscribe((isLoggedIn) => {
+      this.isAuthenticated = isLoggedIn;
+      console.log('utente autenticato', this.isAuthenticated);
+    });
   }
 
-  checkAuth(): boolean {
-    return !!document.cookie
-      .split(';')
-      .some((item) => item.trim().startsWith('authToken'));
-  }
-
-  logout() {
+  logout():void{
     this.userSvc.logout().subscribe(
-      () => {
-        this.isAuthenticated = false;
+      ()=>{
         this.router.navigate(['/first-page']);
       },
-      (err) => {
-        console.error('errore nel logout', err);
+      (error)=>{
+        console.error('errore nel logout', error);
       }
     );
   }

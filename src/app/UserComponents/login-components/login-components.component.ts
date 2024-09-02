@@ -6,26 +6,24 @@ import { Route, Router } from '@angular/router';
 @Component({
   selector: 'app-login-components',
   templateUrl: './login-components.component.html',
-  styleUrl: './login-components.component.scss'
+  styleUrl: './login-components.component.scss',
 })
 export class LoginComponent {
   loginData: ILoginViewModel = {
     email: '',
-    password: ''
-  }
+    password: '',
+  };
 
   constructor(private userService: UserService, private router: Router) {}
 
-  login():void {
+  login(): void {
     this.userService.login(this.loginData).subscribe({
-      next:(response)=>{
-        console.log('login avvenuto con successo', response);
-
-        this.router.navigate(['/profile']);
+      next: (res) => {
+        console.log('login avvenuto con successo', res);
       },
-      error:(error)=>{
-        console.error('impossibile effettuare il login', error);
-      }
+      error: (err) => {
+        console.error('errore durante il login', err);
+      },
     });
   }
 }

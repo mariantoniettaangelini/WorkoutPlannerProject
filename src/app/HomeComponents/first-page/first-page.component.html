@@ -10,18 +10,18 @@
 </head>
 <body>
 
-    <div class="container hero-section">
-        <div class="row align-items-center">
+    <div class="container-fluid hero-section">
+        <div class="row g-0"> <!-- Rimuove i gap tra le colonne -->
             <div class="col-md-6 hero-text">
                 <h1>Personal Workout Planner</h1>
                 <p>Angelini Mariantonietta</p>
                 <div class="hero-buttons">
-                  <button class="btn btn-primary" (click)="navigateToRegister()">Iscriviti</button>
-                  <button class="btn btn-outline-secondary" (click)="navigateToLogin()">Accedi</button>
+                    <button class="btn btn-primary" (click)="navigateToRegister()">Iscriviti</button>
+                    <button class="btn btn-outline-secondary" (click)="navigateToLogin()">Accedi</button>
                 </div>
             </div>
-            <div class="col-md-6 hero-image text-center">
-                <img src="/WorkoutPlannerProject/src/assets/img/immagine1.jpg" alt="Workout Image">
+            <div class="col-md-6 hero-image">
+                <img src="./assets/img/immagine1.jpg" alt="Workout Image">
             </div>
         </div>
     </div>

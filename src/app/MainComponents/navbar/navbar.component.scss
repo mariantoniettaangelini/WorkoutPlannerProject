@@ -58,21 +58,22 @@
   left: 0;
 }
 
-/* Stile per il pulsante di logout */
 .navbar-custom .btn-logout {
   background: none;
   border: none;
   cursor: pointer;
-  color: #2c2c2c;
-  font-family: 'Cursive', sans-serif;
-  font-size: 1.2rem;
+  color: inherit;  // Eredita il colore dal parent per coerenza
+  font-family: 'Roboto', sans-serif;  // Eredita il font-family per coerenza
+  font-size: inherit;  // Eredita il font-size per coerenza
+  font-weight: bold;  // Assicura che il font-weight sia come gli altri link
   padding: 5px 10px;
-  position: relative;
+  margin: 0;  // Rimuove margini predefiniti dei bottoni
   transition: color 0.3s ease;
 }
 
-.navbar-custom .btn-logout:hover {
-  color: #d4af37;
+.navbar-custom .btn-logout:hover, .navbar-custom .btn-logout:focus {
+  color: #d4af37;  // Stesso colore al hover degli altri link
+  outline: none;  // Rimuove l'outline al focus che i browser aggiungono ai bottoni
 }
 
 .navbar-custom .btn-logout::after {

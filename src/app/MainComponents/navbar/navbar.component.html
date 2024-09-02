@@ -13,6 +13,7 @@
   <nav class="navbar-custom">
     <div class="navbar-brand">Workout Planner</div>
     <div class="nav-links">
+      <a routerLink="/home" class="nav-link-custom">Home</a>
       <a routerLink="/profile" class="nav-link-custom">Profile</a>
       <a routerLink="/workouts" class="nav-link-custom">Scegli il tuo Workout</a>
       <button *ngIf="isAuthenticated" class="nav-link-custom btn-logout" (click)="logout()">Logout</button>

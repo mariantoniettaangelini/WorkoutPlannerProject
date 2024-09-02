@@ -1,0 +1,14 @@
+<div class="container">
+  <h2 class="page-title">Workout consigliati per te</h2>
+  <div class="workouts-grid">
+    <div *ngFor="let workout of recommendedWorkouts" class="workout-card">
+      <img [src]="workout.image" alt="{{ workout.name }}" class="workout-image">
+      <h3 class="workout-name">{{ workout.name }}</h3>
+      <p class="workout-description">{{ workout.description || 'Descrizione dell\'allenamento' }}</p>
+      <button [routerLink]="['/workout', workout.id]" class="btn btn-start">Start</button>
+    </div>
+  </div>
+  <ng-template #noWorkouts>
+    <p>Non ci sono workout consigliati al momento.</p>
+  </ng-template>
+</div>

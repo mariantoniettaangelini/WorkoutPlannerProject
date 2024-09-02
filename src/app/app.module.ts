@@ -12,6 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FirstPageComponent } from './HomeComponents/first-page/first-page.component';
 import { NavbarComponent } from './MainComponents/navbar/navbar.component';
 import { RouterModule } from '@angular/router';
+import { HomeComponent } from './HomeComponents/home/home.component';
+import { WorkoutDetailsComponent } from './HomeComponents/workout-details/workout-details.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { RouterModule } from '@angular/router';
     ProfileComponent,
     WorkoutSessionComponent,
     FirstPageComponent,
-    NavbarComponent
+    NavbarComponent,
+    HomeComponent,
+    WorkoutDetailsComponent
   ],
   imports: [
     BrowserModule,

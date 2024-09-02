@@ -21,10 +21,4 @@ constructor(private workoutSessionService: WorkoutSessionService) {}
     });
   }
 
-  chooseSession(id:number):void{
-    this.workoutSessionService.chooseSession(id).subscribe({
-      next:(res)=>console.log('scelta avvenuta con successo', res),
-      error:(err)=> console.error('scelta fallita', err)
-    });
-  }
 }
