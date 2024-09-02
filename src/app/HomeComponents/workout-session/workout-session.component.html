@@ -1,0 +1,7 @@
+<h2>Available Workout Sessions</h2>
+<ul>
+  <li *ngFor="let session of sessions">
+    {{ session.name }} - Type: {{ session.type }}
+    <button (click)="chooseSession(session.id)">Choose</button>
+  </li>
+</ul>

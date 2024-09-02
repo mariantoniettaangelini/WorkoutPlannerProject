@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrazione</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="register.component.scss"> <!-- Assicurati che questo punti al tuo file CSS -->
+</head>
+<body>
+
+    <div class="container hero-section">
+        <div class="row align-items-center">
+            <div class="col-md-6 hero-image text-center">
+                <img src="/WorkoutPlannerProject/src/assets/img/immagine1.jpg" alt="Workout Image">
+            </div>
+            <div class="col-md-6 hero-text">
+                <h2>Registrazione</h2>
+                <form (submit)="register()">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Nome</label>
+                        <input type="text" [(ngModel)]="userData.name" name="name" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" [(ngModel)]="userData.email" name="email" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" [(ngModel)]="userData.password" name="password" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="gender" class="form-label">Genere</label>
+                        <input type="text" [(ngModel)]="userData.gender" name="gender" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="height" class="form-label">Altezza</label>
+                        <input type="number" [(ngModel)]="userData.height" name="height" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="weight" class="form-label">Peso</label>
+                        <input type="number" [(ngModel)]="userData.weight" name="weight" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="experienceLevel" class="form-label">Livello di esperienza</label>
+                        <select [(ngModel)]="userData.experienceLevel" name="experienceLevel" class="form-control">
+                            <option value="" disabled selected>Seleziona il tuo livello</option>
+                            <option value="Principiante">Principiante</option>
+                            <option value="Intermedio">Intermedio</option>
+                            <option value="Avanzato">Avanzato</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                      <label for="goals" class="form-label">Obiettivi</label>
+                      <select [(ngModel)]="userData.goals" name="goals" class="form-control">
+                          <option value="" disabled selected>Seleziona i tuoi obiettivi</option>
+                          <option value="Perdita di peso">Perdita di peso</option>
+                          <option value="Aumento della massa muscolare">Aumento della massa muscolare</option>
+                          <option value="Miglioramento della resistenza">Miglioramento della resistenza</option>
+                          <option value="Flessibilità">Flessibilità</option>
+                          <option value="Benessere generale">Benessere generale</option>
+                      </select>
+                  </div>
+                    <button type="submit" class="btn btn-register">Registrati</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

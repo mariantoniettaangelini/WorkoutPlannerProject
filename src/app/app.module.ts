@@ -3,14 +3,32 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LoginComponent } from './UserComponents/login-components/login-components.component';
+import { FormsModule } from '@angular/forms';
+import { RegisterComponent } from './UserComponents/register/register.component';
+import { ProfileComponent } from './UserComponents/profile/profile.component';
+import { WorkoutSessionComponent } from './HomeComponents/workout-session/workout-session.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FirstPageComponent } from './HomeComponents/first-page/first-page.component';
+import { NavbarComponent } from './MainComponents/navbar/navbar.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    RegisterComponent,
+    ProfileComponent,
+    WorkoutSessionComponent,
+    FirstPageComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot([]),
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

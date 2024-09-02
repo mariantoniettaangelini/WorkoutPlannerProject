@@ -1,0 +1,18 @@
+<div *ngIf="user">
+  <h2>{{ user.name }}'s Profile</h2>
+  <p>Email: {{ user.email }}</p>
+  <p>Gender: {{ user.gender }}</p>
+  <p>Height: {{ user.height }}</p>
+  <p>Weight: {{ user.weight }}</p>
+  <p>Experience Level: {{ user.experienceLevel }}</p>
+  <p>Goals: {{ user.goals }}</p>
+</div>
+
+<div *ngIf="progress.length > 0">
+  <h3>Your Workouts</h3>
+  <ul>
+    <li *ngFor="let p of progress">
+      Workout ID: {{ p.workoutSessionId }} - Completed: {{ p.isCompleted ? 'Yes' : 'No' }}
+    </li>
+  </ul>
+</div>

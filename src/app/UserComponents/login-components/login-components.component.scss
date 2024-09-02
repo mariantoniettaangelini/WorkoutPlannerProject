@@ -1,0 +1,79 @@
+body {
+  background-color: #f8f9fa;
+  font-family: 'Roboto', sans-serif;
+}
+
+.hero-section {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #fefefe;
+  padding: 20px;
+}
+
+.hero-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c2c2c;
+  margin-bottom: 30px;
+}
+
+.hero-text .form-label {
+  font-weight: bold;
+  color: #2c2c2c;
+  margin-bottom: 5px;
+}
+
+.hero-text .form-control {
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  background-color: #f8f9fa;
+}
+
+.hero-text .form-control:focus {
+  border-color: #d4af37;
+  box-shadow: none;
+}
+
+/* Stile per il pulsante "Login" */
+.hero-text .btn-login {
+  color: #2c2c2c;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 20px;
+  display: inline-block;
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.hero-text .btn-login::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #d4af37; /* Colore dorato per la linea */
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.hero-text .btn-login:hover {
+  color: #d4af37; /* Cambia il colore del testo in dorato al passaggio del mouse */
+}
+
+.hero-text .btn-login:hover::before {
+  width: 100%;
+  left: 0;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}

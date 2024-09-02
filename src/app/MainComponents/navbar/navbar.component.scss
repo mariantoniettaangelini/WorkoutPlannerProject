@@ -1,31 +1,45 @@
 /* Navbar Custom Styles */
 .navbar-custom {
-  background-color: #f5f5dc; /* Beige */
-  padding: 10px 20px;
+  background-color: #eedece;
+  padding: 20px 20px;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Assicura che gli elementi siano distribuiti */
-  border-bottom: 2px solid #d4af37; /* Bordo dorato sotto la navbar */
+  flex-direction: column;
+  border-bottom: 2px solid #d4af37;
+  text-align: center;
 }
 
-/* Spaziatore flessibile per spingere il logout a destra */
-.flex-spacer {
-  flex-grow: 1;
+/* Stile per la scritta centrale */
+.navbar-custom .navbar-brand {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  color: #fff;
+  text-align: center;
+  text-shadow:
+      0 0 5px #fff,
+      0 0 10px #fff,
+      0 0 20px #d4af37,
+      0 0 30px #d4af37,
+      0 0 40px #d4af37,
+      0 0 50px #d4af37,
+      0 0 60px #d4af37;
 }
 
 /* Stile dei link della navbar */
 .navbar-custom .nav-link-custom {
-  color: #2c2c2c; /* Colore grigio scuro */
+  color: #2c2c2c;
   text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1rem;
   font-weight: bold;
-  margin-right: 20px;
-  padding: 10px 15px;
+  margin: 5px 15px;
+  padding: 5px 10px;
   position: relative;
   transition: color 0.3s ease;
 }
 
 .navbar-custom .nav-link-custom:hover {
-  color: #d4af37; /* Dorato al passaggio del mouse */
+  color: #d4af37;
 }
 
 .navbar-custom .nav-link-custom::after {
@@ -33,7 +47,7 @@
   position: absolute;
   width: 0;
   height: 2px;
-  background-color: #d4af37; /* Linea dorata sotto il link */
+  background-color: #d4af37;
   left: 50%;
   bottom: 0;
   transition: width 0.3s ease, left 0.3s ease;
@@ -49,15 +63,16 @@
   background: none;
   border: none;
   cursor: pointer;
-  color: #2c2c2c; /* Colore iniziale */
-  font-weight: bold;
-  padding: 10px 15px;
+  color: #2c2c2c;
+  font-family: 'Cursive', sans-serif;
+  font-size: 1.2rem;
+  padding: 5px 10px;
   position: relative;
   transition: color 0.3s ease;
 }
 
 .navbar-custom .btn-logout:hover {
-  color: #d4af37; /* Colore dorato al passaggio del mouse */
+  color: #d4af37;
 }
 
 .navbar-custom .btn-logout::after {
@@ -65,7 +80,7 @@
   position: absolute;
   width: 0;
   height: 2px;
-  background-color: #d4af37; /* Linea dorata sotto il pulsante */
+  background-color: #d4af37;
   left: 50%;
   bottom: 0;
   transition: width 0.3s ease, left 0.3s ease;
@@ -75,3 +90,5 @@
   width: 100%;
   left: 0;
 }
+
+
