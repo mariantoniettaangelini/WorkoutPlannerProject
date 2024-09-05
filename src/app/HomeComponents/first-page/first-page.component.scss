@@ -1,14 +1,14 @@
 body {
   margin: 0;
-  font-family: 'Roboto', sans-serif;
-  background-color: #f8f9fa;
-  overflow-x: hidden; /* Evita lo scrolling orizzontale */
+  font-family: 'Oswald', sans-serif;
+  background-color: #E1E1E1;
+  overflow-x: hidden;
 }
 
 .hero-section {
   display: flex;
   min-height: 100vh;
-  align-items: stretch; /* Allunga le colonne in altezza */
+  align-items: stretch;
   padding: 0;
   margin: 0;
 }
@@ -16,7 +16,7 @@ body {
 .hero-text {
   flex: 1;
   padding: 20px;
-  background-color: #fefefe; /* Colore di sfondo uguale al colore del testo */
+  background-color: #E1E1E1;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,15 +24,16 @@ body {
 
 .hero-text h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 3rem;
+  font-size: 3.3rem;
   font-weight: 700;
   color: #2c2c2c;
 }
 
-.hero-text p {
-  font-size: 1.2rem;
-  color: #8b8b8b;
-  margin-bottom: 20px;
+.hero-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #2c2c2c;
 }
 
 .hero-buttons {
@@ -40,7 +41,7 @@ body {
 }
 
 .hero-buttons button {
-  color: #2c2c2c;
+  color: #007B7F;
   text-decoration: none;
   font-weight: bold;
   padding: 10px 20px;
@@ -53,15 +54,15 @@ body {
 }
 
 .hero-buttons button.btn-primary {
-  color: #2c2c2c;
+  color: #007B7F;
 }
 
 .hero-buttons button.btn-outline-secondary {
-  color: #2c2c2c;
+  color: #007B7F;
 }
 
 .hero-buttons button:hover {
-  color: #d4af37;
+  color: #FF5470;
 }
 
 .hero-buttons button::before {
@@ -71,7 +72,7 @@ body {
   left: 50%;
   width: 0;
   height: 2px;
-  background-color: #d4af37;
+  background-color: #FF5470;
   transition: width 0.3s ease, left 0.3s ease;
 }
 
@@ -82,7 +83,7 @@ body {
 
 .hero-image {
   flex: 1;
-  height: 100vh; /* Occupa l'intera altezza della finestra */
+  height: 100vh;
   overflow: hidden;
   margin: 0;
   padding: 0;
@@ -96,19 +97,18 @@ body {
   object-position: center;
   margin: 0;
   padding: 0;
-  opacity: 0; /* Inizia con l'immagine nascosta */
-  transform: translateX(-100px); /* Sposta l'immagine a sinistra */
-  animation: slideIn 1.5s ease-in-out forwards; /* Esegui l'animazione */
+  opacity: 0;
+  transform: translateX(-100px);
+  animation: slideIn 1.5s ease-in-out forwards;
 }
 
-/* Animazione per far scorrere l'immagine da sinistra verso destra con sfumatura */
 @keyframes slideIn {
   from {
     opacity: 0;
-    transform: translateX(-100px); /* Partenza dalla sinistra */
+    transform: translateX(-100px);
   }
   to {
     opacity: 1;
-    transform: translateX(0); /* Arrivo alla posizione naturale */
+    transform: translateX(0);
   }
 }

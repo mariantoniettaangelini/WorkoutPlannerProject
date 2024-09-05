@@ -1,57 +1,102 @@
-body {
-  background-color: #f8f9fa;
-  font-family: 'Roboto', sans-serif;
+.profile-container {
+  padding: 20px;
 }
 
-h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #2c2c2c;
+.profile-header {
+  display: flex;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px; /* Spazio tra le sezioni */
+  font-family: 'Oswald', sans-serif;
+  align-items: center;
 }
 
-h4 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #2c2c2c;
-  margin-top: 20px;
+.profile-image img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%; /* Rende l'immagine tonda */
+  object-fit: cover; /* Assicura che l'immagine copra l'area senza distorsioni */
+  margin-right: 20px; /* Distanza tra immagine e testo */
+  margin-top: 50px;
+  border: #fff solid 1px;
 }
 
-.profile-image {
-  opacity: 0;
-  transform: translateX(-100px);
-  animation: slideIn 1s ease-in-out forwards;
+.user-info {
+  flex-grow: 1;
+  margin-top: 80px;
 
-  img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 5px;
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  }
 }
 
-.personal-info {
-  font-size: 1.1rem;
-  color: #2c2c2c;
-  margin-bottom: 20px;
+.workout-history {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
 
-  li {
-      margin-bottom: 10px;
-  }
+.workout-card {
+  background-color: #ffebee; /* Sfondo rosa molto chiaro per le card */
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+h2, h4 {
+  color: #333; /* Scuro per miglior contrasto */
 }
 
 p {
-  font-size: 1.2rem;
-  color: #8b8b8b;
+  margin: 5px 0;
 }
 
-@keyframes slideIn {
-  from {
-      opacity: 0;
-      transform: translateX(-100px);
+/* Per gestire la parte superiore della pagina con sfondo corallo */
+.profile-container::after {
+  content: '';
+  display: block;
+  height: 50vh;
+  width: 100%;
+  background-color: #FF5470; /* Corallo */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.content-row {
+  display: flex;
+  justify-content: space-between; /* Distingue chiaramente le due colonne */
+  width: 100%; /* Assicura che il contenuto riempia l'intera larghezza disponibile */
+  margin-top: 20px; /* Distanza dal contenuto superiore */
+}
+
+.progress-chart {
+  flex: 1.5; /* Occupa metà dello spazio disponibile */
+  padding: 20px;
+  margin-right: 20px; /* Spazio tra le due colonne */
+}
+
+.workout-history {
+  flex: 1; /* Più spazio rispetto al grafico dei progressi */
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.workout-card {
+  background-color: #ffebee; /* Manteniamo lo stile della card */
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Miglioramenti per responsività e visualizzazione */
+@media (max-width: 768px) {
+  .content-row {
+    flex-direction: column;
   }
-  to {
-      opacity: 1;
-      transform: translateX(0);
+  .progress-chart, .workout-history {
+    margin-right: 0;
+    margin-bottom: 20px;
   }
 }
+

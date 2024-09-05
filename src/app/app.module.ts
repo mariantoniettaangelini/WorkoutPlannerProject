@@ -14,6 +14,7 @@ import { NavbarComponent } from './MainComponents/navbar/navbar.component';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './HomeComponents/home/home.component';
 import { WorkoutDetailsComponent } from './HomeComponents/workout-details/workout-details.component';
+import { NgApexchartsModule } from 'ng-apexcharts';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { WorkoutDetailsComponent } from './HomeComponents/workout-details/workou
     AppRoutingModule,
     RouterModule.forRoot([]),
     FormsModule,
-    HttpClientModule
+    NgApexchartsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

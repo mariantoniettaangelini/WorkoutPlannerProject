@@ -5,75 +5,113 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrazione</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="register.component.scss"> <!-- Assicurati che questo punti al tuo file CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="register.component.scss">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
 
     <div class="container-fluid hero-section">
         <div class="row">
             <div class="col-md-6 hero-image profile-image">
-                <img src="./assets/img/immagine2.jpg" alt="Workout Img">
+                <img src="./assets/img/immagine2.jpg" alt="Workout Image">
             </div>
             <div class="col-md-6 hero-text">
                 <form (submit)="register()">
-                    <div class="row">
-                      <div class="col-md-6 mb-3">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" [(ngModel)]="userData.email" name="email" class="form-control" required>
-                      </div>
-                      <div class="col-md-6 mb-3">
-                        <label for="password" class="form-label">Password</label>
-                        <input type="password" [(ngModel)]="userData.password" name="password" class="form-control" required>
-                    </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-6 mb-3">
-                        <label for="name" class="form-label">Nome</label>
-                        <input type="text" [(ngModel)]="userData.name" name="name" class="form-control" required>
-                    </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="gender" class="form-label">Genere</label>
-                            <select [(ngModel)]="userData.gender" name="gender" class="form-control">
-                                <option value="" disabled selected>Seleziona</option>
-                                <option value="male">Male</option>
-                                <option value="female">Female</option>
-                            </select>
+                    <!-- Step 1: Email e Password -->
+                    <div class="col-md-6 hero-text">
+                      <form (submit)="register()">
+                          <!-- Step 1: Email e Password -->
+                          <div *ngIf="currentStep === 1">
+                              <div class="mb-3">
+                                  <label for="email" class="form-label">
+                                    <i class="bi bi-envelope"></i> EMAIL
+                                  </label>
+                                  <input type="email" [(ngModel)]="userData.email" name="email" class="form-control" required>
+                              </div>
+                              <div class="mb-3">
+                                  <label for="password" class="form-label">
+                                      <i class="bi bi-lock"></i> PASSWORD
+                                  </label>
+                                  <input type="password" [(ngModel)]="userData.password" name="password" class="form-control" required>
+                              </div>
+                              <button type="button" class="btn btn-register" (click)="goToNextStep()">NEXT</button>
+                          </div>
+                      </form>
+                  </div>
+
+                    <!-- Step 2: Selezione del Genere con carte impilate -->
+                    <div *ngIf="currentStep === 2">
+                        <h3>GENDER</h3>
+                        <div class="stacked-cards">
+                            <div class="card selectable-card" [class.selected]="userData.gender === 'male'" (click)="selectGender('male')">
+                                <div class="card-body text-center">
+                                  <i class="fa-solid fa-person fa"></i> <h5>Maschio</h5>
+                                </div>
+                            </div>
+                            <div class="card selectable-card" [class.selected]="userData.gender === 'female'" (click)="selectGender('female')">
+                                <div class="card-body text-center">
+                                  <i class="fa-solid fa-person-dress fa"></i> <h5>Femmina</h5>
+                                </div>
+                            </div>
                         </div>
+                        <button type="button" class="btn btn-register" (click)="goToNextStep()">NEXT</button>
                     </div>
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label for="height" class="form-label">Altezza</label>
-                            <input type="number" [(ngModel)]="userData.height" name="height" class="form-control">
+
+                    <!-- Step 3: Selezione del Livello di Esperienza con carte impilate -->
+                    <div *ngIf="currentStep === 3">
+                        <h3>LEVEL</h3>
+                        <div class="stacked-cards">
+                            <div class="card selectable-card" [class.selected]="userData.experienceLevel === 'Principiante'" (click)="selectExperience('Principiante')">
+                                <div class="card-body text-center">
+                                  <i class="bi bi-dice-1-fill"></i> <h5>Principiante</h5>
+                                </div>
+                            </div>
+                            <div class="card selectable-card" [class.selected]="userData.experienceLevel === 'Intermedio'" (click)="selectExperience('Intermedio')">
+                                <div class="card-body text-center">
+                                  <i class="bi bi-dice-2-fill"></i> <h5>Intermedio</h5>
+                                </div>
+                            </div>
+                            <div class="card selectable-card" [class.selected]="userData.experienceLevel === 'Avanzato'" (click)="selectExperience('Avanzato')">
+                                <div class="card-body text-center">
+                                  <i class="bi bi-dice-3-fill"></i> <h5>Avanzato</h5>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="weight" class="form-label">Peso</label>
-                            <input type="number" [(ngModel)]="userData.weight" name="weight" class="form-control">
-                        </div>
+                        <button type="button" class="btn btn-register" (click)="goToNextStep()">NEXT</button>
                     </div>
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label for="experienceLevel" class="form-label">Livello di esperienza</label>
-                            <select [(ngModel)]="userData.experienceLevel" name="experienceLevel" class="form-control">
-                                <option value="" disabled selected>Seleziona il tuo livello</option>
-                                <option value="Principiante">Principiante</option>
-                                <option value="Intermedio">Intermedio</option>
-                                <option value="Avanzato">Avanzato</option>
-                            </select>
+
+                    <!-- Step 4: Selezione degli Obiettivi con carte impilate -->
+                    <div *ngIf="currentStep === 4">
+                        <h3>GOALS</h3>
+                        <div class="stacked-cards">
+                            <div class="card selectable-card" [class.selected]="userData.goals === 'Perdita di peso'" (click)="selectGoal('Perdita di peso')">
+                                <div class="card-body text-center">
+                                  <i class="fa fa-solid fa-weight-scale"></i> <h5>Perdita di peso</h5>
+                                </div>
+                            </div>
+                            <div class="card selectable-card" [class.selected]="userData.goals === 'Aumento della massa muscolare'" (click)="selectGoal('Aumento della massa muscolare')">
+                                <div class="card-body text-center">
+                                  <i class="fa-solid fa-dumbbell fa"></i> <h5>Aumento della massa muscolare</h5>
+                                </div>
+                            </div>
+                            <div class="card selectable-card" [class.selected]="userData.goals === 'Miglioramento della resistenza'" (click)="selectGoal('Miglioramento della resistenza')">
+                                <div class="card-body text-center">
+                                  <i class="fa-solid fa-person-running fa"></i> <h5>Miglioramento della resistenza</h5>
+                                </div>
+                            </div>
+                            <div class="card selectable-card" [class.selected]="userData.goals === 'Flessibilità'" (click)="selectGoal('Flessibilità')">
+                                <div class="card-body text-center">
+                                  <i class="fa-solid fa-child-reaching fa"></i> <h5>Flessibilità</h5>
+                                </div>
+                            </div>
+                            <div class="card selectable-card" [class.selected]="userData.goals === 'Benessere generale'" (click)="selectGoal('Benessere generale')">
+                                <div class="card-body text-center">
+                                  <i class="fa-solid fa-heart fa"></i> <h5>Benessere generale</h5>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="goals" class="form-label">Obiettivi</label>
-                            <select [(ngModel)]="userData.goals" name="goals" class="form-control">
-                                <option value="" disabled selected>Seleziona i tuoi obiettivi</option>
-                                <option value="Perdita di peso">Perdita di peso</option>
-                                <option value="Aumento della massa muscolare">Aumento della massa muscolare</option>
-                                <option value="Miglioramento della resistenza">Miglioramento della resistenza</option>
-                                <option value="Flessibilità">Flessibilità</option>
-                                <option value="Benessere generale">Benessere generale</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-center">
                         <button type="submit" class="btn btn-register">Registrati</button>
                     </div>
                 </form>

@@ -20,8 +20,25 @@ export class RegisterComponent {
     goals: ''
   };
 
+  currentStep:number = 1;
+
+  selectGender(gender: string): void {
+    this.userData.gender = gender;
+  }
+
+  selectExperience(experienceLevel: string): void {
+    this.userData.experienceLevel = experienceLevel;
+  }
+
+  selectGoal(goals: string): void {
+    this.userData.goals = goals;
+  }
+
   constructor(private userService: UserService){}
 
+  goToNextStep():void{
+    this.currentStep++;
+  }
   register():void{
     this.userService.register(this.userData).subscribe({
       next:(user)=>console.log('registrazione avvenuta con successo', user),

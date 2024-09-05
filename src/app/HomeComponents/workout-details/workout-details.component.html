@@ -12,11 +12,13 @@
           <strong>{{ exercise.name }}</strong>
         </div>
         <div class="exercise-details">
+          <img src="{{ exercise.image }}" alt="{{ exercise.name }}" class="exercise-image">
           <p>{{ exercise.description || 'No description available' }}</p>
           <p>{{ exercise.muscleGroup || 'Muscle group not specified' }}</p>
         </div>
       </div>
     </div>
+    <button class="btn btn-primary" (click)="chooseSession()">Allenamento completato</button>
   </div>
 
   <ng-template #noWorkout>

@@ -1,22 +1,35 @@
-<div class="container mt-5">
-  <div class="row">
-    <div class="col-md-6">
-      <h2>Bentornato, <span>{{ user?.name }}</span></h2>
-      <div class="profile-image mt-4">
-        <img [src]="profileImageUrl" alt="User Image" class="img-fluid rounded">
-      </div>
+<div class="profile-container">
+  <div class="profile-header">
+    <div class="profile-image">
+      <img [src]="profileImageUrl" alt="User Image" />
     </div>
-    <div class="col-md-6">
-      <h4>Informazioni Personali</h4>
-      <ul class="personal-info list-unstyled">
-        <li>Email: <strong>{{ user?.email }}</strong></li>
-        <li>Genere: <strong>{{ user?.gender }}</strong></li>
-        <li>Livello di esperienza: <strong>{{ user?.experienceLevel }}</strong></li>
-      </ul>
+    <div class="user-info">
+      <h2>Bentornato, <span>{{ user?.name }}</span></h2>
+      <p>{{ user?.experienceLevel }}</p>
+    </div>
+  </div>
+
+  <div class="content-row">
+    <div class="progress-chart">
+      <!-- Grafico dei progressi -->
+      <h4>I tuoi progressi</h4>
+      <apx-chart
+        [series]="chartOptions?.series"
+        [chart]="chartOptions?.chart"
+        [labels]="chartOptions?.labels"
+        [responsive]="chartOptions?.responsive">
+      </apx-chart>
+    </div>
+
+    <div class="workout-history">
       <h4>Storico Workout</h4>
-      <ul class="workout-history list-unstyled">
-        <li *ngFor="let item of progress">{{ item }}</li>
-      </ul>
+      <div *ngFor="let item of progress" class="workout-card">
+        <p>Sessione ID: <strong>{{ item.workoutSession?.name }}</strong></p>
+        <p>Livello: {{ item.workoutSession?.level }}</p>
+        <p>Durata: {{ item.workoutSession?.duration }} minuti</p>
+        <p>Tipologia: {{ item.workoutSession?.type }}</p>
+        <p>Stato: <strong>{{ item.isCompleted ? "Completato" : "In corso" }}</strong></p>
+      </div>
     </div>
   </div>
 </div>

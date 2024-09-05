@@ -1,45 +1,45 @@
 /* Navbar Custom Styles */
 .navbar-custom {
-  background-color: #eedece;
-  padding: 20px 20px;
   display: flex;
-  align-items: center;
   flex-direction: column;
-  border-bottom: 2px solid #d4af37;
-  text-align: center;
+  align-items: center;
+  color: #007B7F;
+  background-color: #007B7F;
+  padding: 10px 0;
+  border-bottom: #FF5470 3px solid;
 }
 
-/* Stile per la scritta centrale */
-.navbar-custom .navbar-brand {
-  font-family: 'Great Vibes', cursive;
-  font-size: 2.5rem;
-  color: #fff;
-  text-align: center;
-  text-shadow:
-      0 0 5px #fff,
-      0 0 10px #fff,
-      0 0 20px #d4af37,
-      0 0 30px #d4af37,
-      0 0 40px #d4af37,
-      0 0 50px #d4af37,
-      0 0 60px #d4af37;
+.navbar-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
-/* Stile dei link della navbar */
+.navbar-logo-image {
+  max-height: 100px;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
 .navbar-custom .nav-link-custom {
   color: #2c2c2c;
   text-decoration: none;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Oswald', sans-serif;
   font-size: 1.1rem;
   font-weight: bold;
-  margin: 5px 15px;
-  padding: 5px 10px;
+  margin: 5px 10px;
+  padding: 0px 15px;
   position: relative;
   transition: color 0.3s ease;
 }
 
 .navbar-custom .nav-link-custom:hover {
-  color: #d4af37;
+  color: #FF5470;
 }
 
 .navbar-custom .nav-link-custom::after {
@@ -47,7 +47,7 @@
   position: absolute;
   width: 0;
   height: 2px;
-  background-color: #d4af37;
+  background-color: #FF5470;
   left: 50%;
   bottom: 0;
   transition: width 0.3s ease, left 0.3s ease;
@@ -62,18 +62,17 @@
   background: none;
   border: none;
   cursor: pointer;
-  color: inherit;  // Eredita il colore dal parent per coerenza
-  font-family: 'Roboto', sans-serif;  // Eredita il font-family per coerenza
-  font-size: inherit;  // Eredita il font-size per coerenza
-  font-weight: bold;  // Assicura che il font-weight sia come gli altri link
+  color: inherit;
+  font-family: 'Oswald', sans-serif;
+  font-size: inherit;
+  font-weight: bold;
   padding: 5px 10px;
-  margin: 0;  // Rimuove margini predefiniti dei bottoni
   transition: color 0.3s ease;
 }
 
 .navbar-custom .btn-logout:hover, .navbar-custom .btn-logout:focus {
-  color: #d4af37;  // Stesso colore al hover degli altri link
-  outline: none;  // Rimuove l'outline al focus che i browser aggiungono ai bottoni
+  color: #FF5470;
+  outline: none;
 }
 
 .navbar-custom .btn-logout::after {
@@ -81,7 +80,7 @@
   position: absolute;
   width: 0;
   height: 2px;
-  background-color: #d4af37;
+  background-color: #FF5470;
   left: 50%;
   bottom: 0;
   transition: width 0.3s ease, left 0.3s ease;
@@ -91,5 +90,3 @@
   width: 100%;
   left: 0;
 }
-
-

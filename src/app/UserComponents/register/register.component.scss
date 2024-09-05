@@ -1,14 +1,14 @@
 body {
-  background-color: #f8f9fa; /* Beige molto chiaro */
-  font-family: 'Roboto', sans-serif;
+  background-color: #E1E1E1;
+  font-family: 'Oswald', sans-serif;
   margin: 0;
-  overflow-x: hidden; /* Evita lo scrolling orizzontale */
+  overflow-x: hidden;
 }
 
 .hero-section {
   display: flex;
   min-height: 100vh;
-  align-items: center; /* Centra verticalmente il contenuto */
+  align-items: center;
   padding: 0;
   margin: 0;
 }
@@ -16,7 +16,7 @@ body {
 .hero-text {
   flex: 1;
   padding: 20px;
-  background-color: #f8f9fa; /* Stesso colore dello sfondo per armonizzare le strisce */
+  background-color: #E1E1E1;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,37 +24,38 @@ body {
 
 .hero-text .form-label {
   font-weight: bold;
-  color: #2c2c2c;
+  color: #007B7F;
   margin-bottom: 5px;
-  text-align: left; /* Mantiene il testo allineato a sinistra */
 }
 
 .hero-text .form-control {
   border-radius: 30px;
   padding: 10px 20px;
   font-size: 1rem;
-  border: 1px solid #ccc;
-  background-color: #f8f9fa;
-  text-align: left; /* Mantiene il testo allineato a sinistra */
+  border: 1px solid #007B7F;
+  background-color: #FFFFFF;
 }
 
 .hero-text .form-control:focus {
-  border-color: #d4af37;
+  border-color: #FF5470;
   box-shadow: none;
 }
 
-/* Stile per il pulsante "Registrati" */
 .hero-text .btn-register {
-  color: #2c2c2c;
+  color: #007B7F;
   text-decoration: none;
   font-weight: bold;
   padding: 10px 20px;
-  display: inline-block;
-  position: relative;
+  margin-right: 15px;
   background: none;
   border: none;
   cursor: pointer;
+  position: relative;
   transition: color 0.3s ease;
+}
+
+.hero-text .btn-register:hover {
+  color: #FF5470;
 }
 
 .hero-text .btn-register::before {
@@ -64,12 +65,8 @@ body {
   left: 50%;
   width: 0;
   height: 2px;
-  background-color: #d4af37; /* Colore dorato per la linea */
+  background-color: #FF5470;
   transition: width 0.3s ease, left 0.3s ease;
-}
-
-.hero-text .btn-register:hover {
-  color: #d4af37; /* Cambia il colore del testo in dorato al passaggio del mouse */
 }
 
 .hero-text .btn-register:hover::before {
@@ -77,13 +74,16 @@ body {
   left: 0;
 }
 
+.bi, .fa {
+  color: #2c2c2c;
+  padding-right: 5px;
+  font-size: 18px;
+}
+
 .hero-image {
   flex: 1;
-  height: 100vh; /* Occupa l'intera altezza della finestra */
+  height: 100vh;
   overflow: hidden;
-  margin: 0;
-  padding: 0;
-  position: relative;
 }
 
 .hero-image img {
@@ -91,21 +91,60 @@ body {
   height: 100%;
   object-fit: cover;
   object-position: center;
-  margin: 0;
-  padding: 0;
-  opacity: 0; /* Inizia con l'immagine nascosta */
-  transform: translateX(-100px); /* Sposta l'immagine a sinistra */
-  animation: slideIn 1.5s ease-in-out forwards; /* Esegui l'animazione */
+  opacity: 0;
+  transform: translateX(-100px);
+  animation: slideIn 1.5s ease-in-out forwards;
 }
 
-/* Animazione per far scorrere l'immagine da sinistra verso destra con sfumatura */
 @keyframes slideIn {
   from {
     opacity: 0;
-    transform: translateX(-100px); /* Partenza dalla sinistra */
+    transform: translateX(-100px);
   }
   to {
     opacity: 1;
-    transform: translateX(0); /* Arrivo alla posizione naturale */
+    transform: translateX(0);
   }
+}
+
+.stacked-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  border: 2px solid #007B7F;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.01);
+  border-color: #FF5470;
+}
+
+.selected {
+  border-color: #FF5470;
+  background-color: #FFFFFF;
+}
+
+.card-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.card-body h5 {
+  margin: 0;
+  font-weight: bold;
+  color: #2c2c2c;
+}
+
+h3 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2c2c2c;
 }

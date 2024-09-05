@@ -27,23 +27,21 @@ export class HomeComponent implements OnInit {
   }
 
   getRecommendedWorkouts(): void {
-    if (!this.user) return;
+    if (!this.user || !this.user.experienceLevel) return;
 
     this.workoutSessionSvc.getWorkoutSessions().subscribe(
-      (response: any) => {
-        const workouts = response.$values;
-        if (Array.isArray(workouts)) {
-          this.recommendedWorkouts = workouts.filter(
-            (workout) =>
-              workout.level.toLowerCase() === this.user!.experienceLevel?.toLowerCase()
-          );
-        }
+      (workouts: any[]) => {  // Assumendo che la risposta sia ora un array standard
+        this.recommendedWorkouts = workouts.filter((workout) => {
+          return workout.level && this.user!.experienceLevel &&
+                 workout.level.toLowerCase() === this.user!.experienceLevel.toLowerCase();
+        });
       },
       (err) => {
         console.error('Errore nel recupero dei workout consigliati', err);
       }
     );
   }
+
 
   chooseSession(id: number): void {
     this.workoutSessionSvc.chooseSession(id).subscribe(

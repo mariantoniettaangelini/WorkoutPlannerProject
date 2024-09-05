@@ -47,6 +47,8 @@ body {
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  align-items: start; /* Allinea gli elementi all'inizio dell'elemento .exercise-item */
+  gap: 10px; /* Distanza tra l'immagine e il testo */
 }
 
 .exercise-info {
@@ -77,3 +79,31 @@ body {
   color: #555;
   padding-left: 20px;
 }
+
+.exercise-image {
+  width: 300px; /* Larghezza fissa dell'immagine */
+  height: 250px; /* Altezza automatica per mantenere l'aspetto */
+  border-radius: 5px; /* Opzionale: bordi arrotondati */
+}
+
+.btn.btn-primary {
+  width: 150px; /* Larghezza più piccola del pulsante */
+  height: auto; /* Altezza automatica per adattarsi al contenuto */
+  background-color: #d4af37; /* Colore oro */
+  color: #fff;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  align-self: center; /* Centra il pulsante orizzontalmente */
+  padding: 10px 20px; /* Padding per regolare la distanza interna */
+  margin-top: 40px; /* Spazio tra l'ultimo esercizio e il pulsante */
+  transition: background-color 0.3s ease;
+  display: inline-block; /* Mantiene il pulsante compatto intorno al contenuto */
+  text-align: center; /* Centra il testo orizzontalmente */
+}
+
+.btn.btn-primary:hover {
+  background-color: #c0932b; /* Colore leggermente più scuro al passaggio del mouse */
+}
+

@@ -1,6 +1,33 @@
-<h2>Available Workout Sessions</h2>
-<ul>
-  <li *ngFor="let session of sessions">
-    {{ session.name }} - Type: {{ session.type }}
-  </li>
-</ul>
+<div class="workouts-header">
+  <h1 class="page-title">Sessioni di Workout</h1>
+</div>
+
+<div class="container">
+  <!-- Filtri con i dropdown -->
+  <div class="filters">
+    <select [(ngModel)]="searchType" (change)="filterSessions()">
+      <option value="">Tutte le Tipologie</option>
+      <option *ngFor="let type of types" [value]="type">{{ type }}</option>
+    </select>
+
+    <select [(ngModel)]="searchMuscleGroup" (change)="filterSessions()">
+      <option value="">Tutti i Gruppi Muscolari</option>
+      <option *ngFor="let group of muscleGroups" [value]="group">{{ group }}</option>
+    </select>
+  </div>
+
+  <!-- Lista delle sessioni filtrate -->
+  <div class="session-list workouts-grid">
+    <div *ngFor="let session of filteredSessions" class="session-item workout-card" (click)="openModal(session)">
+      <div class="workout-image">
+        <img [src]="session.image" alt="{{ session.name }}">
+      </div>
+      <div class="workout-info">
+        <h3>{{ session.name }}</h3>
+        <p>Tipo: {{ session.type }}</p>
+        <p>Durata: {{ session.duration }} minuti</p>
+      </div>
+      <button class="btn-start" [routerLink]="['/workout', session.id]">Start</button>
+    </div>
+  </div>
+</div>

@@ -1,89 +1,178 @@
+.container-fluid {
+  margin: 0; /* Centra il container orizzontalmente */
+  padding: 0;
+  width: 100%;
+  overflow: hidden;/* Rimuove il padding per permettere al banner e al carosello di estendersi */
+}
+
+
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 20px;
+  max-width: 100%;
+  margin: 0 auto!important;
+  padding: 0;
   position: relative;
+}
+
+.workouts-header {
+  background-image: url('/assets/img/immagine1.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 50vh; /* Imposta l'altezza a tutto lo schermo */
+  width: 100%; /* Copre l'intera larghezza della vista */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* Importante per il posizionamento delle card */
+  margin-top: 20px;
 }
 
 .page-title {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Oswald', sans-serif;
   font-size: 2.5rem;
   font-weight: 700;
-  color: #2c2c2c;
-  margin-bottom: 40px;
-  position: relative;
-  text-align: left;
-  width: 100%;
-  padding-left: 20px;
+  color: #4CA1A3;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .workouts-grid {
+  margin-top: -100px; /* Adegua questo valore in base alla sovrapposizione desiderata */
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Aggiusta la larghezza minima per essere più stretta */
   gap: 20px;
+  padding: 20px;
+  position: relative;
+  z-index: 2;
 }
 
 .workout-card {
   display: flex;
   flex-direction: column;
   justify-content: space-between; /* Assicura che il contenuto si espanda e il pulsante rimanga in basso */
-  background-color: #fefefe;
-  border: 1px solid #ccc;
-  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid #ddd;
   padding: 20px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: left;
   min-height: 350px;
+  position: relative; /* Necessario per il posizionamento assoluto del pulsante */
+}
+
+.workout-card:hover {
+  transform: translateY(-5px);
 }
 
 .workout-image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-  margin-bottom: 15px;
-  opacity: 0.7; /* Immagine leggermente sfumata */
-  transition: opacity 0.3s ease;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+
 }
 
-.workout-image:hover {
-  opacity: 1; /* Immagine completamente visibile al passaggio del mouse */
+.workout-info {
+  padding: 10px;
+  flex: 1; /* Assicura che questo contenitore cresca e occupi tutto lo spazio disponibile, spingendo il pulsante in basso */
 }
 
 .workout-name {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Oswald', sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
-  color: #2c2c2c;
-  margin-bottom: 10px;
+  color: #000000;
+  margin-top: 10px;
 }
 
 .workout-description {
   font-size: 1rem;
-  color: #8b8b8b;
-  margin-bottom: 60px;
-  text-align: left;
-  margin: 0;
-  display: -webkit-box;
-  -webkit-line-clamp: 4; /* Mostra solo 4 righe */
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis; /* Aggiunge i tre puntini se il testo supera le 4 righe */
+  color: #666;
+  margin: 10px 0 20px;
 }
 
 .btn-start {
   align-self: flex-start; /* Allinea il pulsante in basso a sinistra */
-  width: 70px;
-  height: 30px;
-  background-color: #d4af37;
+  margin-top: auto; /* Spinge il pulsante in basso */
+  padding: 10px 20px; /* Aggiusta il padding secondo necessità */
+  background-color: #4CA1A3;
   color: #fff;
   border: none;
   font-size: 0.9rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
   text-transform: uppercase;
-  margin-top: 30px;
+  width: fit-content; /* Imposta la larghezza del bottone in base al contenuto interno */
 }
 
 .btn-start:hover {
-  background-color: #b38e30;
+  background-color: #007B7F;
 }
+
+
+
+.banner {
+  background-image: url('/assets/img/BANNER.png');
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 150px 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  position: relative;
+  width: 100vw;
+  left: calc(-50vw + 50%);
+  border-bottom: #FF5470 solid 3px;
+}
+
+.ad-carousel {
+  display: flex;
+  justify-content: center;
+  overflow: auto;
+  white-space: nowrap;
+  -ms-overflow-style: none;
+}
+
+.ad-carousel img {
+  margin: 0 5px;
+  max-width: 700px;
+  transition: transform 0.3s ease;
+}
+
+.ad-carousel img:hover {
+  transform: scale(1.02);
+}
+
+.shop-section {
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  text-align: center;
+  flex-grow: 1; /* Assicura che la sezione dello shop cresca per occupare lo spazio disponibile */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centra il contenuto verticalmente */
+  width: 100%;
+}
+
+.shop-section h2 {
+  color: #007B7F;
+}
+
+.shop-section p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.shop-section .btn-primary {
+  background-color: #4CA1A3;
+  border-color: #4CA1A3;
+}
+
+.shop-section .btn-primary:hover {
+  background-color: #007B7F;
+  border-color: #007B7F;
+}
+
+#carouselExampleFade {
+  margin: 0;
+  padding: 0;
+  width: 100%; /* Occupa la larghezza completa della sua colonna */
+}
+
