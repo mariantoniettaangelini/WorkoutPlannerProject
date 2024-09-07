@@ -2,6 +2,8 @@ import { IWorkoutSession } from './../../Models/i-workout-session';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { WorkoutSessionService } from '../../Services/workout-session.service';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-workout-details',
@@ -40,15 +42,34 @@ workout : IWorkoutSession | null=null;
     });
   }
 
-
   chooseSession(): void {
     if (this.workout) {
       this.workoutSessionSvc.chooseSession(this.workout.id).subscribe(
         () => {
-          console.log('Sessione scelta con successo');
+          // Mostra l'alert SweetAlert2 al completamento della sessione
+          Swal.fire({
+            title: 'Successo!',
+            text: 'I tuoi progressi sono stati aggiornati.',
+            icon: 'success',
+            confirmButtonText: 'OK',
+            customClass: {
+              confirmButton: 'my-custom-button'
+            }
+          });
         },
         (err) => {
-          console.error('Errore nel cambio di sessione', err);
+          console.error('Errore', err);
+
+          // Mostra un'alert di errore in caso di fallimento
+          Swal.fire({
+            title: 'Errore!',
+            text: 'Si è verificato un errore',
+            icon: 'error',
+            confirmButtonText: 'OK',
+            customClass: {
+              confirmButton: 'my-custom-button'
+            }
+          });
         }
       );
     }

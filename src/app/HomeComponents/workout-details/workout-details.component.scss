@@ -1,27 +1,27 @@
 body {
-  background-color: #f5f5dc; /* Beige molto chiaro */
   margin: 0;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Oswald', sans-serif;
 }
 
 .programs-container {
-  background-color: #f5f5dc; /* Beige molto chiaro */
   padding: 40px;
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+  gap: 20px;
 }
 
 .program-header {
-  flex: 2; /* Lascia più spazio al contenuto degli esercizi */
-  margin-right: 40px;
+  flex: 1;
+  margin-bottom: 40px;
 }
 
 .program-header h1 {
-  font-family: 'Arial Black', sans-serif;
+  font-family: 'Oswald', sans-serif;
   font-size: 2.5rem;
-  color: #333;
+  color: #007B7F;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   margin-bottom: 20px;
 }
 
@@ -31,31 +31,33 @@ body {
 }
 
 .program-content {
-  flex: 3; /* Larghezza maggiore per la lista degli esercizi */
+  flex: 2;
 }
 
 .program-list {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Impila le card una sotto l'altra */
   gap: 20px;
 }
 
 .exercise-item {
-  display: flex;
-  align-items: center;
-  background-color: #fff; /* Sfondo bianco per il contenuto dell'esercizio */
+  background-color: #fff;
   padding: 20px;
-  border-radius: 5px;
+  border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  align-items: start; /* Allinea gli elementi all'inizio dell'elemento .exercise-item */
-  gap: 10px; /* Distanza tra l'immagine e il testo */
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.exercise-item:hover {
+  transform: translateY(-5px);
+  background-color: #4CA1A3;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .exercise-info {
   display: flex;
   align-items: center;
   gap: 15px;
-  flex: 1;
   justify-content: flex-start;
 }
 
@@ -69,41 +71,48 @@ body {
   align-items: center;
   font-size: 1.5rem;
   font-weight: bold;
-  border: 2px solid #000;
+  border: 2px solid #007B7F;
+  margin-bottom: 5px;
 }
 
 .exercise-details {
-  text-align: left; /* Allinea il testo a sinistra */
-  flex: 2;
+  flex: 1;
+  text-align: left;
   font-size: 0.9rem;
   color: #555;
-  padding-left: 20px;
+}
+
+.exercise-details:hover {
+  color: #000;
 }
 
 .exercise-image {
-  width: 300px; /* Larghezza fissa dell'immagine */
-  height: 250px; /* Altezza automatica per mantenere l'aspetto */
-  border-radius: 5px; /* Opzionale: bordi arrotondati */
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 5px;
 }
 
 .btn.btn-primary {
-  width: 150px; /* Larghezza più piccola del pulsante */
-  height: auto; /* Altezza automatica per adattarsi al contenuto */
-  background-color: #d4af37; /* Colore oro */
-  color: #fff;
+  background-color: #007B7F;
+  color: white;
   border: none;
   font-size: 1rem;
   cursor: pointer;
+  padding: 10px 20px;
   text-transform: uppercase;
-  align-self: center; /* Centra il pulsante orizzontalmente */
-  padding: 10px 20px; /* Padding per regolare la distanza interna */
-  margin-top: 40px; /* Spazio tra l'ultimo esercizio e il pulsante */
+  margin-top: 40px;
   transition: background-color 0.3s ease;
-  display: inline-block; /* Mantiene il pulsante compatto intorno al contenuto */
-  text-align: center; /* Centra il testo orizzontalmente */
+  text-align: center;
 }
 
 .btn.btn-primary:hover {
-  background-color: #c0932b; /* Colore leggermente più scuro al passaggio del mouse */
+  background-color: #4CA1A3;
+}
+
+.my-custom-button {
+  color: #FF5470 !important;               /* Colore del testo */
+  font-family: 'Oswald', sans-serif;
 }
 

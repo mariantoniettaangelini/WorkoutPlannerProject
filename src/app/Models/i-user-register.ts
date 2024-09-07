@@ -6,5 +6,5 @@ export interface IUserRegister {
   height?: number;
   weight?: number;
   experienceLevel?: string;
-  goals?: string;
+  goals?: string[];
 }

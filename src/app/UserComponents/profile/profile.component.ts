@@ -90,7 +90,7 @@ export class ProfileComponent implements OnInit {
               width: 200,
             },
             legend: {
-              position: 'bottom',
+              position: 'top',
             },
           },
         },

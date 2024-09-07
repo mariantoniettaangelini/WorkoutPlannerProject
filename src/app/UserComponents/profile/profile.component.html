@@ -4,8 +4,12 @@
       <img [src]="profileImageUrl" alt="User Image" />
     </div>
     <div class="user-info">
-      <h2>Bentornato, <span>{{ user?.name }}</span></h2>
-      <p>{{ user?.experienceLevel }}</p>
+      <h2>
+        {{ user?.gender?.toLowerCase() === 'male' ? 'Bentornato' : 'Bentornata' }},
+        <span>{{ user?.name }}</span>
+      </h2>
+
+      <p>{{ user?.experienceLevel }} - {{user?.goals}}</p>
     </div>
   </div>
 
@@ -24,11 +28,11 @@
     <div class="workout-history">
       <h4>Storico Workout</h4>
       <div *ngFor="let item of progress" class="workout-card">
-        <p>Sessione ID: <strong>{{ item.workoutSession?.name }}</strong></p>
+        <i class="fa fa-solid fa-dumbbell"></i>
+        <p><strong>{{ item.workoutSession?.name }}</strong></p>
         <p>Livello: {{ item.workoutSession?.level }}</p>
-        <p>Durata: {{ item.workoutSession?.duration }} minuti</p>
-        <p>Tipologia: {{ item.workoutSession?.type }}</p>
-        <p>Stato: <strong>{{ item.isCompleted ? "Completato" : "In corso" }}</strong></p>
+        <p>Durata: <br>{{ item.workoutSession?.duration }} min</p>
+        <p><strong>{{ item.isCompleted ? "Completato" : "In corso" }}</strong></p>
       </div>
     </div>
   </div>
