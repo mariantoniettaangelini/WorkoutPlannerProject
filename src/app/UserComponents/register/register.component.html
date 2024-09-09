@@ -1,16 +1,4 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registrazione</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="register.component.scss">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-</head>
-<body>
+
 
     <div class="container-fluid hero-section">
         <div class="row">
@@ -41,32 +29,8 @@
                       </form>
                   </div>
 
-                    <!-- Step 2: Nome, Altezza, Peso -->
+                    <!-- Step 2: Selezione del Genere con carte impilate -->
                     <div *ngIf="currentStep === 2">
-                      <h3>Informazioni Personali</h3>
-                      <div class="mb-3">
-                          <label for="name" class="form-label">
-                            <i class="bi bi-person"></i> NOME
-                          </label>
-                          <input type="text" [(ngModel)]="userData.name" name="name" class="form-control" required>
-                      </div>
-                      <div class="mb-3">
-                          <label for="height" class="form-label">
-                            <i class="bi bi-rulers"></i> ALTEZZA (cm)
-                          </label>
-                          <input type="number" [(ngModel)]="userData.height" name="height" class="form-control" required>
-                      </div>
-                      <div class="mb-3">
-                          <label for="weight" class="form-label">
-                            <i class="bi bi-scale"></i> PESO (kg)
-                          </label>
-                          <input type="number" [(ngModel)]="userData.weight" name="weight" class="form-control" required>
-                      </div>
-                      <button type="button" class="btn btn-register" (click)="goToNextStep()">NEXT</button>
-                  </div>
-
-                  <!-- Step 3: Selezione del Genere -->
-                    <div *ngIf="currentStep === 3">
                         <h3>GENDER</h3>
                         <div class="stacked-cards">
                             <div class="card selectable-card" [class.selected]="userData.gender === 'male'" (click)="selectGender('male')">
@@ -83,8 +47,8 @@
                         <button type="button" class="btn btn-register" (click)="goToNextStep()">NEXT</button>
                     </div>
 
-                    <!-- Step 4: Selezione del Livello di Esperienza con carte impilate -->
-                    <div *ngIf="currentStep === 4">
+                    <!-- Step 3: Selezione del Livello di Esperienza con carte impilate -->
+                    <div *ngIf="currentStep === 3">
                         <h3>LEVEL</h3>
                         <div class="stacked-cards">
                             <div class="card selectable-card" [class.selected]="userData.experienceLevel === 'Principiante'" (click)="selectExperience('Principiante')">
@@ -106,50 +70,36 @@
                         <button type="button" class="btn btn-register" (click)="goToNextStep()">NEXT</button>
                     </div>
 
-                    <!-- Step 5: Selezione degli Obiettivi con carte impilate -->
-                    <div *ngIf="currentStep === 5">
+                    <!-- Step 4: Selezione degli Obiettivi con carte impilate -->
+                    <div *ngIf="currentStep === 4">
                         <h3>GOALS</h3>
                         <div class="stacked-cards">
-                          <div class="card selectable-card"
-                          [class.selected]="userData.goals?.includes('Perdita di peso')"
-                          (click)="toggleGoal('Perdita di peso')">
-                       <div class="card-body text-center">
-                         <i class="fa fa-solid fa-weight-scale"></i> <h5>Perdita di peso</h5>
-                       </div>
-                     </div>
-
-                     <div class="card selectable-card"
-                          [class.selected]="userData.goals?.includes('Aumento della massa muscolare')"
-                          (click)="toggleGoal('Aumento della massa muscolare')">
-                       <div class="card-body text-center">
-                         <i class="fa-solid fa-dumbbell fa"></i> <h5>Aumento della massa muscolare</h5>
-                       </div>
-                     </div>
-
-                     <div class="card selectable-card"
-                          [class.selected]="userData.goals?.includes('Miglioramento della resistenza')"
-                          (click)="toggleGoal('Miglioramento della resistenza')">
-                       <div class="card-body text-center">
-                         <i class="fa-solid fa-person-running fa"></i> <h5>Miglioramento della resistenza</h5>
-                       </div>
-                     </div>
-
-                     <div class="card selectable-card"
-                          [class.selected]="userData.goals?.includes('Flessibilità')"
-                          (click)="toggleGoal('Flessibilità')">
-                       <div class="card-body text-center">
-                         <i class="fa-solid fa-child-reaching fa"></i> <h5>Flessibilità</h5>
-                       </div>
-                     </div>
-
-                     <div class="card selectable-card"
-                          [class.selected]="userData.goals?.includes('Benessere generale')"
-                          (click)="toggleGoal('Benessere generale')">
-                       <div class="card-body text-center">
-                         <i class="fa-solid fa-heart fa"></i> <h5>Benessere generale</h5>
-                       </div>
-                     </div>
-                   </div>
+                            <div class="card selectable-card" [class.selected]="userData.goals === 'Perdita di peso'" (click)="selectGoal('Perdita di peso')">
+                                <div class="card-body text-center">
+                                  <i class="fa fa-solid fa-weight-scale"></i> <h5>Perdita di peso</h5>
+                                </div>
+                            </div>
+                            <div class="card selectable-card" [class.selected]="userData.goals === 'Aumento della massa muscolare'" (click)="selectGoal('Aumento della massa muscolare')">
+                                <div class="card-body text-center">
+                                  <i class="fa-solid fa-dumbbell fa"></i> <h5>Aumento della massa muscolare</h5>
+                                </div>
+                            </div>
+                            <div class="card selectable-card" [class.selected]="userData.goals === 'Miglioramento della resistenza'" (click)="selectGoal('Miglioramento della resistenza')">
+                                <div class="card-body text-center">
+                                  <i class="fa-solid fa-person-running fa"></i> <h5>Miglioramento della resistenza</h5>
+                                </div>
+                            </div>
+                            <div class="card selectable-card" [class.selected]="userData.goals === 'Flessibilità'" (click)="selectGoal('Flessibilità')">
+                                <div class="card-body text-center">
+                                  <i class="fa-solid fa-child-reaching fa"></i> <h5>Flessibilità</h5>
+                                </div>
+                            </div>
+                            <div class="card selectable-card" [class.selected]="userData.goals === 'Benessere generale'" (click)="selectGoal('Benessere generale')">
+                                <div class="card-body text-center">
+                                  <i class="fa-solid fa-heart fa"></i> <h5>Benessere generale</h5>
+                                </div>
+                            </div>
+                        </div>
                         <button type="submit" class="btn btn-register">Registrati</button>
                     </div>
                 </form>
@@ -157,6 +107,4 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+

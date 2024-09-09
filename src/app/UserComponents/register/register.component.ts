@@ -2,11 +2,12 @@ import { UserService } from './../../Services/user-service.service';
 import { Component } from '@angular/core';
 import { IUser } from '../../Models/i-user';
 import { IUserRegister } from '../../Models/i-user-register';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']  // Correzione plurale
+  styleUrl: './register.component.scss',
 })
 export class RegisterComponent {
   userData: IUserRegister = {
@@ -17,10 +18,10 @@ export class RegisterComponent {
     height: undefined,
     weight: undefined,
     experienceLevel: '',
-    goals: []
+    goals: '',
   };
 
-  currentStep:number = 1;
+  currentStep: number = 1;
 
   selectGender(gender: string): void {
     this.userData.gender = gender;
@@ -30,40 +31,24 @@ export class RegisterComponent {
     this.userData.experienceLevel = experienceLevel;
   }
 
-  toggleGoal(goal: string): void {
-    if (!this.userData.goals) {
-      this.userData.goals = [];
-    }
-
-    const g = this.userData.goals.indexOf(goal);
-
-    if (g > -1) {
-      this.userData.goals.splice(g, 1);
-    } else if (this.userData.goals.length < 2) {
-      this.userData.goals.push(goal);
-    }
+  selectGoal(goals: string): void {
+    this.userData.goals = goals;
   }
 
-  constructor(private userService: UserService){}
+  constructor(private userService: UserService, private router: Router) {}
 
-  goToNextStep():void{
+  goToNextStep(): void {
     this.currentStep++;
   }
-register(): void {
-  const userToRegister = {
-    ...this.userData,
-    goals: this.userData.goals,  };
-  console.log('Dati inviati per la registrazione:', userToRegister);
-
-  this.userService.register(this.userData).subscribe({
-    next: (user) => console.log('registrazione avvenuta con successo', user),
-    error: (error) => {
-      console.error('Errore durante la registrazione', error);
-      if (error.error?.errors) {
-        // Logga gli errori specifici
-        console.error('Dettagli dell\'errore di validazione:', error.error.errors);
-      }
-}});
-}
-
+  register(): void {
+    this.userService.register(this.userData).subscribe({
+      next: (user) => {
+        console.log('registrazione avvenuta con successo', user),
+          this.router.navigate(['/login']);
+      },
+      error: (error) => {
+        console.error('errore durante la registrazione', error);
+      },
+    });
+  }
 }
