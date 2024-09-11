@@ -37,6 +37,7 @@
   font-size: 1rem;
   border: 1px solid #007B7F;
   border-radius: 5px;
+  border-radius: 0;
 }
 
 .workouts-grid {
@@ -60,6 +61,7 @@
   text-align: left;
   min-height: 350px;
   transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 0;
 }
 
 .workout-card:hover {

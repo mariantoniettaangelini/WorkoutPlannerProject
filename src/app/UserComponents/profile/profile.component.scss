@@ -14,8 +14,8 @@
 }
 
 .profile-image img {
-  width: 180px;
-  height: 180px;
+  width: 190px;
+  height: 190px;
   border-radius: 50%; /* Rende l'immagine tonda */
   object-fit: cover; /* Assicura che l'immagine copra l'area senza distorsioni */
   margin-right: 20px; /* Distanza tra immagine e testo */
@@ -44,6 +44,7 @@
 
 h2, h4 {
   color: #333; /* Scuro per miglior contrasto */
+  font-size: 37px;
 }
 
 p {
@@ -74,16 +75,18 @@ p {
   flex: 1.5; /* Occupa metà dello spazio disponibile */
   padding: 20px;
   margin-right: 20px; /* Spazio tra le due colonne */
-  background-color: white;
-  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid #ddd;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .workout-history {
   flex: 1.5; /* Più spazio rispetto al grafico dei progressi */
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid #ddd;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 0;
 }
 
 .fa {

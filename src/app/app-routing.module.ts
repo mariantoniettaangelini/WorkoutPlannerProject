@@ -7,6 +7,8 @@ import { WorkoutSessionComponent } from './HomeComponents/workout-session/workou
 import { FirstPageComponent } from './HomeComponents/first-page/first-page.component';
 import { HomeComponent } from './HomeComponents/home/home.component';
 import { WorkoutDetailsComponent } from './HomeComponents/workout-details/workout-details.component';
+import { ShopComponent } from './HomeComponents/shop/shop.component';
+import { CartComponent } from './HomeComponents/cart/cart.component';
 
 const routes: Routes = [
   { path: '', component: FirstPageComponent },  // Pagina iniziale
@@ -15,7 +17,9 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'workouts', component: WorkoutSessionComponent },
   { path: 'workout/:id', component: WorkoutDetailsComponent },
-  { path: 'home', component: HomeComponent },   // Workouts page  // Pagina del profilo utente
+  { path: 'home', component: HomeComponent },
+  { path: 'shop', component: ShopComponent},
+  { path: 'cart', component: CartComponent},  // Workouts page  // Pagina del profilo utente
   { path: '**', redirectTo: '', pathMatch: 'full' }  // Fallback alla home page per percorsi sconosciuti
 ];
 

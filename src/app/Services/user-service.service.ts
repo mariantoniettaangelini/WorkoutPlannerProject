@@ -54,7 +54,14 @@ export class UserService {
   }
 
   getProfile(): Observable<IUser> {
-    return this.http.get<IUser>(`${this.apiUrl}/profile`, { withCredentials: true });
+    return this.http.get<IUser>(`${this.apiUrl}/profile`, { withCredentials: true }).pipe(
+      tap(user => {
+        if (user) {
+          this.authSubject.next(user);
+          this.router.navigate(['/profile']);
+        }
+      })
+    );
   }
 
   getProgress():Observable<any[]> {

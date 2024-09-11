@@ -1,0 +1,92 @@
+
+
+.shop-header {
+  background-image: url('/assets/img/shopbanner.webp');
+  background-size: cover;
+  background-position: center;
+  height: 50vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+h1{
+  font-family: 'Oswald', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #4CA1A3;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.product-grid {
+  margin-top: -100px; /* Adegua questo valore in base alla sovrapposizione desiderata */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Aggiusta la larghezza minima per essere più stretta */
+  gap: 20px;
+  padding: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.product-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Assicura che il contenuto si espanda e il pulsante rimanga in basso */
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid #ddd;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  min-height: 350px;
+  position: relative;
+}
+
+.product-item:hover {
+  transform: translateY(-5px);
+}
+
+.product-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-item h2, p {
+  font-size: 1rem;
+  color: #000;
+}
+
+.quantity-and-button {
+  display: flex;
+  justify-content: space-between; /* Spinge il bottone tutto a destra */
+  align-items: center; /* Mantiene gli elementi verticalmente allineati */
+}
+
+.quantity-input {
+  width: 60px; /* Controlla la larghezza del campo di input per la quantità */
+  margin-right: 10px; /* Aggiunge un po' di spazio tra l'input e il bottone */
+}
+
+h2 {
+  margin-top: 20px;
+}
+
+button {
+  align-self: flex-start;
+  margin-top: auto;
+  padding: 10px 20px;
+  background-color: #007B7F;
+  color: white;
+  border: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-transform: uppercase;
+}
+
+button:hover {
+  background-color: #4CA1A3;
+}
+

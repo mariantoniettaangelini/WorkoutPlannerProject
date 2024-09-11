@@ -15,6 +15,8 @@ import { RouterModule } from '@angular/router';
 import { HomeComponent } from './HomeComponents/home/home.component';
 import { WorkoutDetailsComponent } from './HomeComponents/workout-details/workout-details.component';
 import { NgApexchartsModule } from 'ng-apexcharts';
+import { ShopComponent } from './HomeComponents/shop/shop.component';
+import { CartComponent } from './HomeComponents/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { NgApexchartsModule } from 'ng-apexcharts';
     FirstPageComponent,
     NavbarComponent,
     HomeComponent,
-    WorkoutDetailsComponent
+    WorkoutDetailsComponent,
+    ShopComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

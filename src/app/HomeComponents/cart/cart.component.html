@@ -1,0 +1,32 @@
+<div class="cart-container">
+  <h2>Il tuo Carrello</h2>
+
+  <!-- Messaggio se il carrello è vuoto -->
+  <p *ngIf="cartItems.length === 0">Il tuo carrello è vuoto.</p>
+
+  <!-- Elenco dei prodotti nel carrello -->
+  <div *ngFor="let item of cartItems" class="cart-item">
+    <div class="item-info">
+      <img [src]="item.product.picture" alt="{{ item.product.name }}" class="item-image">
+      <div>
+        <h3>{{ item.product.name }}</h3>
+        <p>{{ item.product.price | currency }}</p>
+      </div>
+    </div>
+
+    <!-- Selettore quantità -->
+    <div class="item-actions">
+      <label>Quantità:</label>
+      <input type="number" [(ngModel)]="item.quantity" (change)="updateQuantity(item, item.quantity)" min="1">
+      <button (click)="removeItem(item.id)">
+        <i class="fa-solid fa-trash"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Totale e checkout -->
+  <div class="cart-total" *ngIf="cartItems.length > 0">
+    <h3>Totale carrello: {{ total | currency }}</h3>
+    <button class="btn btn-primary" (click)="checkout()">Checkout</button>
+  </div>
+</div>

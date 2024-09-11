@@ -99,6 +99,7 @@
   transition: background-color 0.3s ease;
   text-transform: uppercase;
   width: fit-content; /* Imposta la larghezza del bottone in base al contenuto interno */
+  border-radius: 0;
 }
 
 .btn-start:hover {
@@ -108,16 +109,15 @@
 
 
 .banner {
-  background-image: url('/assets/img/BANNER.png');
   background-size: cover;
   background-position: center;
-  text-align: center;
-  padding: 150px 0;
-  background-color: rgba(255, 255, 255, 0.8);
-  position: relative;
-  width: 100vw;
-  left: calc(-50vw + 50%);
-  border-bottom: #FF5470 solid 3px;
+  height: 50vh; /* Imposta l'altezza a tutto lo schermo */
+  width: 100%; /* Copre l'intera larghezza della vista */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* Importante per il posizionamento delle card */
+  margin-bottom: 20px;
 }
 
 .ad-carousel {
@@ -139,8 +139,11 @@
 }
 
 .shop-section {
+  font-family: 'Oswald', sans-serif;
   padding: 20px;
-  background-color: #fff;
+  background-image: url('/assets/img/shopimg.jpg');
+  background-size: cover; /* Copre l'intera sezione */
+  background-position: center;
   border: 1px solid #ddd;
   text-align: center;
   flex-grow: 1; /* Assicura che la sezione dello shop cresca per occupare lo spazio disponibile */
@@ -148,6 +151,7 @@
   flex-direction: column;
   justify-content: center; /* Centra il contenuto verticalmente */
   width: 100%;
+  margin-left: 3px;
 }
 
 .shop-section h2 {
@@ -155,8 +159,8 @@
 }
 
 .shop-section p {
-  font-size: 1rem;
-  color: #666;
+  font-size: 1.3rem;
+  color: #000;
   margin-bottom: 20px;
 }
 
