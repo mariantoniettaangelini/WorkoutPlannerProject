@@ -5,6 +5,6 @@ export interface IOrder {
   id: number;
   quantity: number;
   isCompleted: boolean;
-  user : IUser
+  user? : IUser
   product: IProduct;
 }

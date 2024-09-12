@@ -14,19 +14,15 @@ export class ShopComponent implements OnInit {
   products: IProduct[] = [];
   user?: IUser;
   selectedQuantities: { [productId: number]: number } = {};
+  isLoggedIn = false;
 
-  constructor(private orderSvc: OrderService, private userSvc: UserService) {}
+  constructor(private orderSvc: OrderService, private userSvc: UserService) {
+    this.userSvc.isLoggedIn$.subscribe(isLoggedIn => {
+      this.isLoggedIn = isLoggedIn;
+    })
+  }
   ngOnInit(): void {
-    this.userSvc.user$.subscribe((user) => {
-      this.user = user ?? undefined;
-
-      if (this.user) {
-        this.loadProducts();
-            } else {
-        alert('Non sei loggato');
-      }
-    });
-
+    this.loadProducts();
   }
 
   loadProducts(): void {
@@ -41,7 +37,7 @@ export class ShopComponent implements OnInit {
   }
 
   addToCart(product: IProduct): void {
-    if(!this.user) {
+    if(!this.isLoggedIn) {
       alert("Accedi per aggiungere al carrello");
       return;
     }

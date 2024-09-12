@@ -70,10 +70,10 @@ export class CartComponent implements OnInit {
     );
   }
 
-  removeItem(orderId: number): void {
-    this.orderSvc.removeFromCart(orderId).subscribe(
+  removeItem(itemId: number): void {
+    this.orderSvc.removeFromCart(itemId).subscribe(
       () => {
-        this.cartItems = this.cartItems.filter((item) => item.id === orderId);
+        this.cartItems = this.cartItems.filter((item) => item.id != itemId);
         this.calculateTotal();
         alert('Prodotto rimosso');
       },

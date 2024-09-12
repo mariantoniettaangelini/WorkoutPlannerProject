@@ -27,6 +27,9 @@ export class UserService {
 
   constructor(private http: HttpClient, private router:Router) { }
 
+  isLoggedIn(): boolean {
+    return !!localStorage.getItem('userToken');
+  }
   login(loginData: ILoginViewModel): Observable<any> {
     return this.http.post<IUser>(`${this.apiUrl}/login`, loginData, { withCredentials: true }).pipe(
       tap(user => {

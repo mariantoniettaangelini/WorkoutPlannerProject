@@ -59,16 +59,16 @@
 }
 
 .navbar-custom .btn-logout {
-  color: #2c2c2c;
-  background: none;
+  color: #2c2c2c; /* Colore del testo più chiaro */
+  background-color: #007B7F;
   border: none;
   cursor: pointer;
-  color: inherit;
   font-family: 'Oswald', sans-serif;
   font-size: inherit;
   font-weight: bold;
+  position: relative;
   padding: 5px 10px;
-  transition: color 0.3s ease;
+  transition: width 0.3s ease, left 0.3s ease;
 }
 
 .navbar-custom .btn-logout:hover, .navbar-custom .btn-logout:focus {

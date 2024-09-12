@@ -1,10 +1,3 @@
-body {
-  background-color: #E1E1E1;
-  font-family: 'Oswald', sans-serif;
-  margin: 0;
-  overflow-x: hidden;
-}
-
 .hero-section {
   display: flex;
   min-height: 100vh;
@@ -16,7 +9,7 @@ body {
 .hero-text {
   flex: 1;
   padding: 20px;
-  background-color: #E1E1E1;
+  background-color: #e1e1e1;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -35,18 +28,18 @@ body {
   border-radius: 30px;
   padding: 10px 20px;
   font-size: 1rem;
-  border: 1px solid #007B7F;
-  background-color: #FFFFFF;
+  border: 1px solid #007b7f;
+  background-color: #ffffff;
   text-align: center;
 }
 
 .hero-text .form-control:focus {
-  border-color: #FF5470;
+  border-color: #ff5470;
   box-shadow: none;
 }
 
 .hero-text .btn-login {
-  color: #007B7F;
+  color: #007b7f;
   text-decoration: none;
   font-weight: bold;
   padding: 10px 20px;
@@ -59,18 +52,18 @@ body {
 }
 
 .hero-text .btn-login::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 50%;
   width: 0;
   height: 2px;
-  background-color: #FF5470;
+  background-color: #ff5470;
   transition: width 0.3s ease, left 0.3s ease;
 }
 
 .hero-text .btn-login:hover {
-  color: #FF5470;
+  color: #ff5470;
 }
 
 .hero-text .btn-login:hover::before {
