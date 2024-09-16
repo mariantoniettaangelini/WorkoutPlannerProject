@@ -7,67 +7,77 @@ import { IUser } from '../Models/i-user';
 import { Router } from '@angular/router';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UserService {
-  private apiUrl = 'https://localhost:7161/api/user'
+  private apiUrl = 'https://localhost:7161/api/user';
   loginData: ILoginViewModel = {
     email: '',
-    password: ''
-  }
+    password: '',
+  };
   private authSubject = new BehaviorSubject<IUser | null>(null);
 
-  syncIsLoggedIn:boolean = false;
+  syncIsLoggedIn: boolean = false;
 
   user$ = this.authSubject.asObservable();
   isLoggedIn$ = this.user$.pipe(
-    map(user => !!user),
-    tap(isLoggedIn => this.syncIsLoggedIn = isLoggedIn)
+    map((user) => !!user),
+    tap((isLoggedIn) => (this.syncIsLoggedIn = isLoggedIn))
   );
 
-  constructor(private http: HttpClient, private router:Router) { }
+  constructor(private http: HttpClient, private router: Router) {}
 
   isLoggedIn(): boolean {
     return !!localStorage.getItem('userToken');
   }
   login(loginData: ILoginViewModel): Observable<any> {
-    return this.http.post<IUser>(`${this.apiUrl}/login`, loginData, { withCredentials: true }).pipe(
-      tap(user => {
-        if (user) {
-          this.authSubject.next(user);
-          this.router.navigate(['/profile']);
-        }
-      })
-    );
+    return this.http
+      .post<IUser>(`${this.apiUrl}/login`, loginData, { withCredentials: true })
+      .pipe(
+        tap((user) => {
+          if (user) {
+            this.authSubject.next(user);
+            this.router.navigate(['/profile']);
+          }
+        })
+      );
   }
 
   register(userData: IUserRegister): Observable<IUser> {
-    return this.http.post<IUser>(`${this.apiUrl}/register`, userData, { withCredentials: true }).pipe(
-      tap(user => this.authSubject.next(user))
-    );
+    return this.http
+      .post<IUser>(`${this.apiUrl}/register`, userData, {
+        withCredentials: true,
+      })
+      .pipe(tap((user) => this.authSubject.next(user)));
   }
 
   logout(): Observable<any> {
-    return this.http.post(`${this.apiUrl}/logout`, {}, { withCredentials: true }).pipe(
-      tap(() => {
-        this.authSubject.next(null);
-        this.router.navigate(['/first-page']);
-      })
-    );
+    return this.http
+      .post(`${this.apiUrl}/logout`, {}, { withCredentials: true })
+      .pipe(
+        tap(() => {
+          this.authSubject.next(null);
+          this.router.navigate(['/first-page']);
+        })
+      );
   }
 
   getProfile(): Observable<IUser> {
-    return this.http.get<IUser>(`${this.apiUrl}/profile`, { withCredentials: true }).pipe(
-      tap(user => {
-        if (user) {
-          this.authSubject.next(user);
-          this.router.navigate(['/profile']);
-        }
-      })
-    );
+    return this.http
+      .get<IUser>(`${this.apiUrl}/profile`, { withCredentials: true })
+      .pipe(
+        tap((user) => {
+          if (user) {
+            this.authSubject.next(user);
+            this.router.navigate(['/profile']);
+          }
+        })
+      );
   }
 
-  getProgress():Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/progress`, { withCredentials: true });
+  getProgress(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/progress`, {
+      withCredentials: true,
+    });
   }
 }

@@ -6,19 +6,28 @@
 
   <div *ngIf="workout; else noWorkout" class="program-content">
     <div class="program-list">
-      <div *ngFor="let exercise of workout.exercises; let i = index" class="exercise-item">
+      <div
+        *ngFor="let exercise of workout.exercises; let i = index"
+        class="exercise-item"
+      >
         <div class="exercise-info">
           <div class="exercise-number">{{ i + 1 }}</div>
           <strong>{{ exercise.name }}</strong>
         </div>
         <div class="exercise-details">
-          <img src="{{ exercise.image }}" alt="{{ exercise.name }}" class="exercise-image">
-          <p>{{ exercise.description || 'No description available' }}</p>
-          <p>{{ exercise.muscleGroup || 'Muscle group not specified' }}</p>
+          <img
+            src="{{ exercise.image }}"
+            alt="{{ exercise.name }}"
+            class="exercise-image"
+          />
+          <p>{{ exercise.description || "No description available" }}</p>
+          <p>{{ exercise.muscleGroup || "Muscle group not specified" }}</p>
         </div>
       </div>
     </div>
-    <button class="btn btn-primary" (click)="chooseSession()">Allenamento completato</button>
+    <button class="btn btn-primary" (click)="chooseSession()">
+      Allenamento completato
+    </button>
   </div>
 
   <ng-template #noWorkout>

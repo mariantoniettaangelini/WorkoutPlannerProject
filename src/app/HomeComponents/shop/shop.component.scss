@@ -1,7 +1,5 @@
-
-
 .shop-header {
-  background-image: url('/assets/img/shopbanner.webp');
+  background-image: url("/assets/img/shopbanner.webp");
   background-size: cover;
   background-position: center;
   height: 50vh;
@@ -12,18 +10,18 @@
   margin-bottom: 20px;
 }
 
-h1{
-  font-family: 'Oswald', sans-serif;
+h1 {
+  font-family: "Oswald", sans-serif;
   font-size: 2.5rem;
   font-weight: 700;
-  color: #4CA1A3;
+  color: #4ca1a3;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .product-grid {
-  margin-top: -100px; /* Adegua questo valore in base alla sovrapposizione desiderata */
+  margin-top: -100px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Aggiusta la larghezza minima per essere più stretta */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
   padding: 20px;
   position: relative;
@@ -33,7 +31,7 @@ h1{
 .product-item {
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Assicura che il contenuto si espanda e il pulsante rimanga in basso */
+  justify-content: space-between;
   background-color: rgba(255, 255, 255, 0.1);
   border: 1px solid #ddd;
   padding: 20px;
@@ -51,42 +49,79 @@ h1{
   width: 100%;
   height: 200px;
   object-fit: cover;
+  margin-bottom: 10px;
 }
 
-.product-item h2, p {
+.product-item h2 {
+  font-size: 2rem;
+  color: #000;
+}
+
+.product-item p {
   font-size: 1rem;
   color: #000;
 }
 
 .quantity-and-button {
   display: flex;
-  justify-content: space-between; /* Spinge il bottone tutto a destra */
-  align-items: center; /* Mantiene gli elementi verticalmente allineati */
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
-.quantity-input {
-  width: 60px; /* Controlla la larghezza del campo di input per la quantità */
-  margin-right: 10px; /* Aggiunge un po' di spazio tra l'input e il bottone */
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
 }
 
-h2 {
-  margin-top: 20px;
-}
-
-button {
-  align-self: flex-start;
-  margin-top: auto;
-  padding: 10px 20px;
-  background-color: #007B7F;
-  color: white;
+.quantity-selector button,
+.cart-button {
+  background-color: #f2f2f2;
   border: none;
-  font-size: 0.9rem;
+  font-size: 1.2rem;
+  padding: 5px 10px;
+  cursor: pointer;
+  color: #000;
+}
+
+.quantity-selector button {
+  background-color: #000;
+  color: #fff;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quantity-selector .quantity-input {
+  text-align: center;
+  border: none;
+  background: transparent;
+  color: #000;
+  width: 40px;
+  padding: 0 5px;
+}
+
+.cart-button {
+  padding: 10px 20px;
+  background: transparent;
+  color: #007b7f;
+  border: none;
+  font-size: 1.2rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
   text-transform: uppercase;
 }
 
-button:hover {
-  background-color: #4CA1A3;
+.cart-button:hover {
+  background-color: #4ca1a3;
+  color: #000;
 }
 
+.decrease,
+.increase {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}

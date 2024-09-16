@@ -4,15 +4,29 @@
   </div>
   <div class="product-grid">
     <div *ngFor="let product of products" class="product-item">
-      <img [src]="product.picture" alt="{{ product.name }}">
+      <img [src]="product.picture" alt="{{ product.name }}" />
       <h2>{{ product.name }}</h2>
       <p>{{ product.description }}</p>
       <p>Prezzo: {{ product.price | currency }}</p>
       <!-- Selettore per la quantità -->
       <div class="quantity-and-button">
-        <input type="number" [(ngModel)]="selectedQuantities[product.id]" min="1" [value]="selectedQuantities[product.id] || 1" class="quantity-input">
-        <button (click)="addToCart(product)">
-          <i class="fa-solid fa-cart-plus"></i>
+        <div class="quantity-selector">
+          <button class="decrease" (click)="updateQuantity(product.id, -1)">
+            <i class="fa-solid fa-minus"></i>
+          </button>
+          <!-- Use selectedQuantities for binding the input value -->
+          <input
+            type="text"
+            class="quantity-input"
+            [value]="selectedQuantities[product.id]"
+            readonly
+          />
+          <button class="increase" (click)="updateQuantity(product.id, 1)">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </div>
+        <button class="cart-button" (click)="addToCart(product)">
+          <i class="fa fa-cart-plus"></i>
         </button>
       </div>
     </div>

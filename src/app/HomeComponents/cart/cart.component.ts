@@ -93,15 +93,14 @@ export class CartComponent implements OnInit {
       () => {
         this.cartItems = [];
         this.total = 0;
-        // Mostra un alert di successo con SweetAlert2
         Swal.fire({
           title: 'Acquisto completato con successo!',
           text: 'Grazie per il tuo acquisto.',
           icon: 'success',
           confirmButtonText: 'OK',
           customClass: {
-              confirmButton: 'my-custom-button'
-          }
+            confirmButton: 'my-custom-button',
+          },
         });
       },
       (err) => {
@@ -119,8 +118,8 @@ export class CartComponent implements OnInit {
           icon: 'error',
           confirmButtonText: 'OK',
           customClass: {
-              confirmButton: 'my-custom-button'
-          }
+            confirmButton: 'my-custom-button',
+          },
         });
       }
     );

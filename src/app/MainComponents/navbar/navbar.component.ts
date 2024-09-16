@@ -19,12 +19,12 @@ export class NavbarComponent {
     });
   }
 
-  logout():void{
+  logout(): void {
     this.userSvc.logout().subscribe(
-      ()=>{
+      () => {
         this.router.navigate(['/first-page']);
       },
-      (error)=>{
+      (error) => {
         console.error('errore nel logout', error);
       }
     );

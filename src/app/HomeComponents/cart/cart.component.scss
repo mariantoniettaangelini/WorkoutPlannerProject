@@ -1,4 +1,3 @@
-/* Stili generali del container */
 .cart-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -7,20 +6,18 @@
   border: 1px solid #ddd;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-top: 20px;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
 }
 
 h2 {
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
 }
 
-/* Stili per l'intestazione */
 .cart-container h2 {
-  color: #333;
+  color: #000;
   text-align: center;
 }
 
-/* Stili per gli elementi del carrello */
 .cart-item {
   display: flex;
   align-items: center;
@@ -37,7 +34,7 @@ h2 {
 
 .item-image {
   width: 80px;
-  height: auto;
+  height: 80px;
   margin-right: 20px;
   border-radius: 4px;
 }
@@ -45,15 +42,14 @@ h2 {
 .item-info h3 {
   font-size: 18px;
   margin-bottom: 5px;
-  color: #333;
+  color: #000;
 }
 
 .item-info p {
   font-size: 16px;
-  color: #666;
+  color: #000;
 }
 
-/* Stili per le azioni del carrello */
 .item-actions {
   text-align: right;
 }
@@ -66,23 +62,22 @@ h2 {
 }
 
 .item-actions button {
-  padding: 10px 20px; /* Aggiusta il padding secondo necessità */
-  background-color: #4CA1A3;
+  padding: 10px 20px;
+  background-color: #4ca1a3;
   color: #fff;
   border: none;
   font-size: 0.9rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
   text-transform: uppercase;
-  width: fit-content; /* Imposta la larghezza del bottone in base al contenuto interno */
+  width: fit-content;
   border-radius: 0;
 }
 
 .item-actions button:hover {
-  background-color: #007B7F;
+  background-color: #007b7f;
 }
 
-/* Stili per il totale del carrello */
 .cart-total {
   text-align: right;
   margin-top: 20px;
@@ -90,22 +85,22 @@ h2 {
 
 .cart-total h3 {
   font-size: 20px;
-  color: #333;
+  color: #000;
 }
 
 .btn-primary {
-  padding: 10px 20px; /* Aggiusta il padding secondo necessità */
-  background-color: #4CA1A3;
+  padding: 10px 20px;
+  background-color: #4ca1a3;
   color: #fff;
   border: none;
   font-size: 0.9rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
   text-transform: uppercase;
-  width: fit-content; /* Imposta la larghezza del bottone in base al contenuto interno */
+  width: fit-content;
   border-radius: 0;
 }
 
 .btn-primary:hover {
-  background-color: #007B7F;
+  background-color: #007b7f;
 }

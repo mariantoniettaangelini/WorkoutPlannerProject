@@ -2,11 +2,11 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
 }
 
 .workouts-header {
-  background-image: url('/assets/img/immagine5.jpg'); /* Cambia con l'immagine che desideri usare */
+  background-image: url("/assets/img/immagine5.jpg");
   background-size: cover;
   background-position: center;
   height: 50vh;
@@ -19,10 +19,10 @@
 }
 
 .page-title {
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   font-size: 2.5rem;
   font-weight: 700;
-  color: #007B7F;
+  color: #007b7f;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -35,7 +35,7 @@
 .filters select {
   padding: 10px;
   font-size: 1rem;
-  border: 1px solid #007B7F;
+  border: 1px solid #007b7f;
   border-radius: 5px;
   border-radius: 0;
 }
@@ -60,13 +60,14 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: left;
   min-height: 350px;
-  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease,
+    box-shadow 0.3s ease;
   border-radius: 0;
 }
 
 .workout-card:hover {
   transform: translateY(-5px);
-  background-color: #4CA1A3;
+  background-color: #4ca1a3;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
@@ -98,7 +99,7 @@
   align-self: flex-start;
   margin-top: auto;
   padding: 10px 20px;
-  background-color: #007B7F;
+  background-color: #007b7f;
   color: white;
   border: none;
   font-size: 0.9rem;
@@ -108,7 +109,7 @@
 }
 
 .btn-start:hover {
-  background-color: #4CA1A3;
+  background-color: #4ca1a3;
 }
 
 .modal {
@@ -135,8 +136,8 @@
 }
 
 .modal-header {
-  background-color: #4CA1A3;
-  border: 2px solid #007B7F;
+  background-color: #4ca1a3;
+  border: 2px solid #007b7f;
   padding: 15px;
   text-align: center;
   border-radius: 8px;
@@ -152,7 +153,6 @@
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1000;
 }
-
 
 .modal-header h2 {
   margin: 0;

@@ -1,7 +1,6 @@
 body {
   margin: 0;
-  font-family: 'Oswald', sans-serif;
-  background-color: #E1E1E1;
+  font-family: "Oswald", sans-serif;
   overflow-x: hidden;
 }
 
@@ -16,24 +15,23 @@ body {
 .hero-text {
   flex: 1;
   padding: 20px;
-  background-color: #E1E1E1;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 .hero-text h1 {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 3.3rem;
   font-weight: 700;
-  color: #2c2c2c;
+  color: #ff5470;
 }
 
 .hero-text h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 1rem;
   font-weight: 700;
-  color: #2c2c2c;
+  color: #ff5470;
 }
 
 .hero-buttons {
@@ -41,7 +39,7 @@ body {
 }
 
 .hero-buttons button {
-  color: #007B7F;
+  color: #007b7f;
   text-decoration: none;
   font-weight: bold;
   padding: 10px 20px;
@@ -54,25 +52,25 @@ body {
 }
 
 .hero-buttons button.btn-primary {
-  color: #007B7F;
+  color: #007b7f;
 }
 
 .hero-buttons button.btn-outline-secondary {
-  color: #007B7F;
+  color: #007b7f;
 }
 
 .hero-buttons button:hover {
-  color: #FF5470;
+  color: #ff5470;
 }
 
 .hero-buttons button::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 50%;
   width: 0;
   height: 2px;
-  background-color: #FF5470;
+  background-color: #ff5470;
   transition: width 0.3s ease, left 0.3s ease;
 }
 

@@ -1,17 +1,21 @@
 <nav class="navbar-custom">
   <div class="navbar-logo">
-      <img src="/assets/img/logo.png" alt="Logo" class="navbar-logo-image">
+    <img src="/assets/img/logo.png" alt="Logo" class="navbar-logo-image" />
   </div>
   <div class="nav-links">
-      <a routerLink="/home" class="nav-link-custom">HOME</a>
-      <a routerLink="/profile" class="nav-link-custom">PROFILE</a>
-      <a routerLink="/workouts" class="nav-link-custom">CHOOSE A WORKOUT</a>
-      <a routerLink="/cart" class="nav-link-custom">CART</a>
-      <button *ngIf="isAuthenticated" class="nav-link-custom btn-logout" (click)="logout()">
-        <i class="fa-solid fa-arrow-right-from-bracket"></i>
-      </button>
-      <!-- Login e First Page appaiono solo se l'utente non è loggato -->
-      <a routerLink="/" *ngIf="!isAuthenticated" class="nav-link-custom">
-        <i class="fa-solid fa-user"></i>
-      </a>  </div>
+    <a routerLink="/home" class="nav-link-custom">HOME</a>
+    <a routerLink="/profile" class="nav-link-custom">PROFILE</a>
+    <a routerLink="/workouts" class="nav-link-custom">CHOOSE A WORKOUT</a>
+    <a routerLink="/cart" class="nav-link-custom">CART</a>
+    <button
+      *ngIf="isAuthenticated"
+      class="nav-link-custom btn-logout"
+      (click)="logout()"
+    >
+      <i class="fa-solid fa-arrow-right-from-bracket"></i>
+    </button>
+    <a routerLink="/" *ngIf="!isAuthenticated" class="nav-link-custom">
+      <i class="fa-solid fa-user"></i>
+    </a>
+  </div>
 </nav>

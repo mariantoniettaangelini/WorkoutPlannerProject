@@ -1,12 +1,11 @@
-/* Navbar Custom Styles */
 .navbar-custom {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #007B7F;
-  background-color: #007B7F;
+  color: #007b7f;
+  background-color: #007b7f;
   padding: 10px 0;
-  border-bottom: #FF5470 3px solid;
+  border-bottom: #ff5470 3px solid;
 }
 
 .navbar-logo {
@@ -29,7 +28,7 @@
 .navbar-custom .nav-link-custom {
   color: #2c2c2c;
   text-decoration: none;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   font-size: 1.1rem;
   font-weight: bold;
   margin: 5px 10px;
@@ -39,15 +38,15 @@
 }
 
 .navbar-custom .nav-link-custom:hover {
-  color: #FF5470;
+  color: #ff5470;
 }
 
 .navbar-custom .nav-link-custom::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 0;
   height: 2px;
-  background-color: #FF5470;
+  background-color: #ff5470;
   left: 50%;
   bottom: 0;
   transition: width 0.3s ease, left 0.3s ease;
@@ -59,11 +58,11 @@
 }
 
 .navbar-custom .btn-logout {
-  color: #2c2c2c; /* Colore del testo più chiaro */
-  background-color: #007B7F;
+  color: #2c2c2c;
+  background-color: #007b7f;
   border: none;
   cursor: pointer;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   font-size: inherit;
   font-weight: bold;
   position: relative;
@@ -71,17 +70,18 @@
   transition: width 0.3s ease, left 0.3s ease;
 }
 
-.navbar-custom .btn-logout:hover, .navbar-custom .btn-logout:focus {
-  color: #FF5470;
+.navbar-custom .btn-logout:hover,
+.navbar-custom .btn-logout:focus {
+  color: #ff5470;
   outline: none;
 }
 
 .navbar-custom .btn-logout::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 0;
   height: 2px;
-  background-color: #FF5470;
+  background-color: #ff5470;
   left: 50%;
   bottom: 0;
   transition: width 0.3s ease, left 0.3s ease;

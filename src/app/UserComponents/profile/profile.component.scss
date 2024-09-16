@@ -1,7 +1,6 @@
 .profile-container {
   padding: 20px;
-  font-family: 'Oswald', sans-serif;
-
+  font-family: "Oswald", sans-serif;
 }
 
 .profile-header {
@@ -9,7 +8,7 @@
   padding: 20px;
   border-radius: 10px;
   margin-bottom: 20px; /* Spazio tra le sezioni */
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   align-items: center;
 }
 
@@ -26,7 +25,7 @@
 .user-info {
   flex-grow: 1;
   margin-top: 80px;
-
+  color: #005255;
 }
 
 .workout-history {
@@ -42,22 +41,27 @@
   border-radius: 5px;
 }
 
-h2, h4 {
-  color: #333; /* Scuro per miglior contrasto */
-  font-size: 37px;
+h2 {
+  font-size: 45px;
+  margin-top: 15px;
+  color: #007b7f;
 }
 
-p {
+h4 {
+  font-size: 38px;
+}
+
+.workout-history p {
   margin: 5px 0;
+  color: #2c2c2c;
 }
 
-/* Per gestire la parte superiore della pagina con sfondo corallo */
 .profile-container::after {
-  content: '';
+  content: "";
   display: block;
   height: 50vh;
   width: 100%;
-  background-color: #FF5470; /* Corallo */
+  background-color: #ff5470;
   position: absolute;
   top: 0;
   left: 0;
@@ -66,22 +70,22 @@ p {
 
 .content-row {
   display: flex;
-  justify-content: space-between; /* Distingue chiaramente le due colonne */
-  width: 100%; /* Assicura che il contenuto riempia l'intera larghezza disponibile */
-  margin-top: 20px; /* Distanza dal contenuto superiore */
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 20px;
 }
 
 .progress-chart {
-  flex: 1.5; /* Occupa metà dello spazio disponibile */
+  flex: 1.5;
   padding: 20px;
-  margin-right: 20px; /* Spazio tra le due colonne */
+  margin-right: 20px;
   background-color: rgba(255, 255, 255, 0.5);
   border: 1px solid #ddd;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .workout-history {
-  flex: 1.5; /* Più spazio rispetto al grafico dei progressi */
+  flex: 1.5;
   background-color: rgba(255, 255, 255, 0.5);
   border: 1px solid #ddd;
   padding: 20px;
@@ -90,37 +94,35 @@ p {
 }
 
 .fa {
-  color: #fff;
+  color: #2c2c2c;
 }
 
 .workout-card {
   display: flex;
   align-items: center;
-  background: linear-gradient(to right, #005255, #5bbbbc); /* Gradient for the cards */
+  background: linear-gradient(to right, #005255, #5bbbbc);
   padding: 20px;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
   gap: 20px;
-  color: #fff; /* White text for contrast */
+  color: #fff;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   justify-content: space-between;
 }
 
 .workout-card:hover {
-  transform: translateY(-5px); /* Hover effect */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* More shadow on hover */
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-
-/* Miglioramenti per responsività e visualizzazione */
 @media (max-width: 768px) {
   .content-row {
     flex-direction: column;
   }
-  .progress-chart, .workout-history {
+  .progress-chart,
+  .workout-history {
     margin-right: 0;
     margin-bottom: 20px;
   }
 }
-

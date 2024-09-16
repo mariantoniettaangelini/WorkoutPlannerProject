@@ -30,10 +30,14 @@ export class HomeComponent implements OnInit {
     if (!this.user || !this.user.experienceLevel) return;
 
     this.workoutSessionSvc.getWorkoutSessions().subscribe(
-      (workouts: any[]) => {  // Assumendo che la risposta sia ora un array standard
+      (workouts: any[]) => {
         this.recommendedWorkouts = workouts.filter((workout) => {
-          return workout.level && this.user!.experienceLevel &&
-                 workout.level.toLowerCase() === this.user!.experienceLevel.toLowerCase();
+          return (
+            workout.level &&
+            this.user!.experienceLevel &&
+            workout.level.toLowerCase() ===
+              this.user!.experienceLevel.toLowerCase()
+          );
         });
       },
       (err) => {
@@ -41,7 +45,6 @@ export class HomeComponent implements OnInit {
       }
     );
   }
-
 
   chooseSession(id: number): void {
     this.workoutSessionSvc.chooseSession(id).subscribe(

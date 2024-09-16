@@ -5,11 +5,13 @@
     </div>
     <div class="user-info">
       <h2>
-        {{ user?.gender?.toLowerCase() === 'male' ? 'Bentornato' : 'Bentornata' }},
+        {{
+          user?.gender?.toLowerCase() === "male" ? "Bentornato" : "Bentornata"
+        }},
         <span>{{ user?.name }}!</span>
       </h2>
 
-      <p>{{ user?.experienceLevel }} - {{user?.goals}}</p>
+      <p>{{ user?.experienceLevel }} - {{ user?.goals }}</p>
     </div>
   </div>
 
@@ -21,7 +23,8 @@
         [series]="chartOptions?.series"
         [chart]="chartOptions?.chart"
         [labels]="chartOptions?.labels"
-        [responsive]="chartOptions?.responsive">
+        [responsive]="chartOptions?.responsive"
+      >
       </apx-chart>
     </div>
 
@@ -29,10 +32,14 @@
       <h4>Storico Workout</h4>
       <div *ngFor="let item of progress" class="workout-card">
         <i class="fa fa-solid fa-dumbbell"></i>
-        <p><strong>{{ item.workoutSession?.name }}</strong></p>
+        <p>
+          <strong>{{ item.workoutSession?.name }}</strong>
+        </p>
         <p>Livello: {{ item.workoutSession?.level }}</p>
-        <p>Durata: <br>{{ item.workoutSession?.duration }} min</p>
-        <p><strong>{{ item.isCompleted ? "Completato" : "In corso" }}</strong></p>
+        <p>Durata: <br />{{ item.workoutSession?.duration }} min</p>
+        <p>
+          <strong>{{ item.isCompleted ? "Completato" : "In corso" }}</strong>
+        </p>
       </div>
     </div>
   </div>

@@ -1,21 +1,18 @@
-/* Navbar Custom Styles */
 .navbar-custom {
-  background-color: #f5f5dc; /* Beige */
+  background-color: #f5f5dc;
   padding: 10px 20px;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Assicura che gli elementi siano distribuiti */
-  border-bottom: 2px solid #d4af37; /* Bordo dorato sotto la navbar */
+  justify-content: space-between;
+  border-bottom: 2px solid #d4af37;
 }
 
-/* Spaziatore flessibile per spingere il logout a destra */
 .flex-spacer {
   flex-grow: 1;
 }
 
-/* Stile dei link della navbar */
 .navbar-custom .nav-link-custom {
-  color: #2c2c2c; /* Colore grigio scuro */
+  color: #2c2c2c;
   text-decoration: none;
   font-weight: bold;
   margin-right: 20px;
@@ -25,7 +22,7 @@
 }
 
 .navbar-custom .nav-link-custom:hover {
-  color: #d4af37; /* Dorato al passaggio del mouse */
+  color: #d4af37;
 }
 
 .navbar-custom .nav-link-custom::after {
@@ -33,7 +30,7 @@
   position: absolute;
   width: 0;
   height: 2px;
-  background-color: #d4af37; /* Linea dorata sotto il link */
+  background-color: #d4af37;
   left: 50%;
   bottom: 0;
   transition: width 0.3s ease, left 0.3s ease;
@@ -44,12 +41,11 @@
   left: 0;
 }
 
-/* Stile per il pulsante di logout */
 .navbar-custom .btn-logout {
   background: none;
   border: none;
   cursor: pointer;
-  color: #2c2c2c; /* Colore iniziale */
+  color: #2c2c2c;
   font-weight: bold;
   padding: 10px 15px;
   position: relative;
@@ -57,7 +53,7 @@
 }
 
 .navbar-custom .btn-logout:hover {
-  color: #d4af37; /* Colore dorato al passaggio del mouse */
+  color: #d4af37;
 }
 
 .navbar-custom .btn-logout::after {
@@ -65,7 +61,7 @@
   position: absolute;
   width: 0;
   height: 2px;
-  background-color: #d4af37; /* Linea dorata sotto il pulsante */
+  background-color: #d4af37;
   left: 50%;
   bottom: 0;
   transition: width 0.3s ease, left 0.3s ease;
