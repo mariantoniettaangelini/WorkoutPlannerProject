@@ -30,8 +30,8 @@
       </div>
       <div class="workout-info">
         <h3>{{ session.name }}</h3>
-        <p>Tipo: {{ session.type }}</p>
-        <p>Durata: {{ session.duration }} minuti</p>
+        <p><i>{{ session.description }}</i></p>
+        <p>{{ session.level }} - {{ session.duration }} minuti</p>
       </div>
       <button class="btn-start" [routerLink]="['/workout', session.id]">
         Start

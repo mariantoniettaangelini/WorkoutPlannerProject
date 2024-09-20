@@ -1,36 +1,79 @@
-<div class="programs-container">
-  <div class="program-header">
-    <h1>{{ workout?.name }}</h1>
-    <p class="program-description">{{ workout?.description }}</p>
+
+<div class="workout-container">
+  <div class="workout-header">
+    <div class="circuit-info">
+      <p>{{ workout?.name }} - Esercizio {{ currentExerciseIndex + 1 }} / {{ workout?.exercises?.length }}</p>
+    </div>
+
+    <!-- Timer -->
+    <div class="exercise-timer">
+      <svg class="progress-circle" width="120" height="120">
+        <circle
+          class="progress-background"
+          cx="60"
+          cy="60"
+          r="54"
+        ></circle>
+        <circle
+          class="progress-bar"
+          cx="60"
+          cy="60"
+          r="54"
+          [attr.stroke-dasharray]="circumference"
+          [attr.stroke-dashoffset]="offset"
+        ></circle>
+      </svg>
+      <div class="time-remaining">{{ timeRemaining }}</div>
+    </div>
   </div>
 
-  <div *ngIf="workout; else noWorkout" class="program-content">
-    <div class="program-list">
-      <div
-        *ngFor="let exercise of workout.exercises; let i = index"
-        class="exercise-item"
-      >
-        <div class="exercise-info">
-          <div class="exercise-number">{{ i + 1 }}</div>
-          <strong>{{ exercise.name }}</strong>
-        </div>
-        <div class="exercise-details">
-          <img
-            src="{{ exercise.image }}"
-            alt="{{ exercise.name }}"
-            class="exercise-image"
-          />
-          <p>{{ exercise.description || "No description available" }}</p>
-          <p>{{ exercise.muscleGroup || "Muscle group not specified" }}</p>
-        </div>
+  <div *ngIf="workout && workout.exercises && workout.exercises.length > 0; else noWorkout" class="workout-content">
+    <div class="exercise-display">
+      <div class="exercise-info">
+        <h2>{{ workout?.exercises?.[currentExerciseIndex]?.name }}</h2>
+        <p>{{ workout?.exercises?.[currentExerciseIndex]?.description || 'Nessuna descrizione disponibile' }}</p>
+      </div>
+
+      <div class="exercise-details">
+        <img
+          [src]="workout?.exercises?.[currentExerciseIndex]?.image"
+          alt="{{ workout?.exercises?.[currentExerciseIndex]?.name }}"
+          class="exercise-image"
+        />
+      </div>
+
+      <div class="exercise-timer-control">
+        <button class="start-timer-btn" (click)="startTimer()" [disabled]="timerRunning">START</button>
       </div>
     </div>
-    <button class="btn btn-primary" (click)="chooseSession()">
-      Allenamento completato
-    </button>
+
+    <!-- Previous/Next btn -->
+    <div class="control-buttons">
+      <button (click)="previous()" [disabled]="currentExerciseIndex === 0" class="control-btn">
+        <i class="fa fa-solid fa-backward"></i>
+      </button>
+      <button (click)="next()" [disabled]="currentExerciseIndex === (workout?.exercises?.length || 0) - 1" class="control-btn">
+        <i class="fa fa-solid fa-forward"></i>
+      </button>
+    </div>
+
+    <div class="next-exercise-info">
+      <p>REST: <b>{{ restTime }} seconds</b></p>
+    </div>
+
+    <button
+    *ngIf="currentExerciseIndex === (workout?.exercises?.length || 0) - 1"
+    class="btn btn-primary"
+    (click)="chooseSession()"
+  >
+    Allenamento completato
+  </button>
   </div>
 
   <ng-template #noWorkout>
-    <p>No workout found.</p>
+    <p>Nessun allenamento trovato.</p>
   </ng-template>
 </div>
+
+
+

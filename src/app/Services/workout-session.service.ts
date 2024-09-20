@@ -11,9 +11,9 @@ export class WorkoutSessionService {
 
   constructor(private http: HttpClient) {}
 
-  getWorkoutSessions(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}`, { withCredentials: true });
-  }
+ getWorkoutSessions(): Observable<any[]> {
+   return this.http.get<any[]>(`${this.apiUrl}`, { withCredentials: true });
+ }
 
   getWorkoutSessionById(id: number): Observable<IWorkoutSession> {
     return this.http.get<IWorkoutSession>(`${this.apiUrl}/${id}`, {
