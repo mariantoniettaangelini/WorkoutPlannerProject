@@ -178,7 +178,7 @@
 
 @media (max-width: 1250px) {
   .workouts-grid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adatta per schermi piccoli */
-    justify-content: space-around; /* Distribuisce lo spazio intorno agli elementi */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    justify-content: space-around;
   }
 }
